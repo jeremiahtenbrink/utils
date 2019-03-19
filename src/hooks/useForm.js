@@ -9,12 +9,12 @@ const useForm = (onSubmit, initialValues) => {
 
   const handleChange = e => {
     const { name, value } = e.target;
-    setValues(prev => ({ ...prev, [name]: value }));
+    setValues(prevValues => ({ ...prevValues, [name]: value }));
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit();
+    onSubmit(values);
     setValues({});
   };
 
