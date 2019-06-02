@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 
-export default function useLocalStorageState(key, initialValue) {
+export default function useLocalStorageState(key, initialValue = null) {
+  const invalidKey = typeof key !== 'string' || key.length > 0;
+
+  if (invalidKey) throw TypeError('Storage key must be a non-empty string.');
+
   const [state, setState] = useState(() => {
     let value;
     try {
