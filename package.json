@@ -1,18 +1,25 @@
 {
-  "name": "react-hooks-examples",
+  "name": "useful-hooks",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
+    "axios": "^0.19.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3",
+    "@types/node": "^12.6.1",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "tsc"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "eslintConfig": {
     "extends": "react-app"
   },
