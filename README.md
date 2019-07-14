@@ -52,8 +52,7 @@ return (
 )
 ```
 
-#### Setup useAxios in component. This does not set the default config for 
-#### other useAxios calls. 
+#### Setup useAxios in component. This does not set the default config for other useAxios calls. 
 ```javascript
 // or use config setup in component. 
 const [request, value, error, isLoading] = useAxios({baseURL: 
