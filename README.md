@@ -36,11 +36,19 @@ import {setAxiosDefaultConfig, setAxiosAuthConfig} from 'useful-react-hooks';
 
 // use Axios Config to generate default configuration.
 setAxiosDefaultConfig({baseURL: "http://some-base-url/", timeout: 1000});
+setAxiosDefaultConfig({baseURL: 'http://some-base-url/',
+                               timeout: 1000,
+                               headers: {
+                                   authorization: "userTokenGoesHere"
+                               }});
 
 //then use useAxios hook in component. 
 const [request, value, error, isloading] = useAxios();
 useEffect(() => {
+    // default axios request. 
     request.get('api/url');
+    //axious with auth api request. 
+    request.get('api/auth', true);    
 }, []);
 return (
     <>
