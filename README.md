@@ -1,6 +1,7 @@
 <h1 align="center">Welcome to useful-react-hooks 👋</h1>
 <p>
-  <img src="https://img.shields.io/badge/version-0.1.3-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/version-0.1.4-blue
+  .svg?cacheSeconds=2592000" />
   <a href="https://github.com/jeremiahtenbrink/useful-hooks#readme">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
   </a>
@@ -27,8 +28,37 @@ npm install useful-react-hooks
 
 ## Usage
 
+#useAxios
 ```javascript
-import {useAxios} from 'useful-react-hooks'
+//in index.js
+import {setAxiosDefaultConfig, setAxiosAuthConfig} from 'useful-react-hooks';
+
+// use Axios Config to generate default configuration.
+setAxiosDefaultConfig({baseURL: "http://some-base-url/", timeout: 1000});
+//then use useAxios hook in component. 
+const [request, value, error, isloading] = useAxios();
+useEffect(() => {
+    request.get('api/url');
+}, []);
+return (
+    {value && value.map(item => <div>{item}</div>)}
+)
+
+
+// or use config setup in component. 
+const [request, value, error, isLoading] = useAxios({baseURL: 
+"https://some-url/", timeout: 1000});
+return (
+    <>
+    {isLoading && <div>loading</div>}
+    <button onClick={() => request.post('someUrl', object)}>click me</button>
+    <button onClick={() => request.put('someUrl', object)}>click me</button>
+    <button onClick={() => request.del('someUrl/SomeId', object)}>click 
+    me</button>
+    {error && <p>{error}</p>}
+    </>
+)
+
 ```
 
 ## Author

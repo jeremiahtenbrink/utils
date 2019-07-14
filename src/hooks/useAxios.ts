@@ -100,16 +100,17 @@ export const useAxios = ( config: AxiosRequestConfig | null = null ): [ IRequest
   ];
 };
 
-export const setDefaultConfig = ( config: AxiosConfig ): void => {
+export const setAxiosDefaultConfig = ( config: AxiosConfig ): void => {
   debugger;
   AxiosConfig.setDefaultConfig( config );
 };
 
-export const setAuthConfig = ( config: AxiosConfig ): void => {
+export const setAxiosAuthConfig = ( config: AxiosConfig ): void => {
   AxiosConfig.setAuthConfig( config );
 };
 
 interface IRequest {
+  
   get: ( url: string, useAuth?: boolean ) => void;
   post: ( url: string, useAuth?: boolean ) => void;
   put: ( url: string, useAuth?: boolean ) => void;
