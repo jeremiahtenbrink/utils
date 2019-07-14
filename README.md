@@ -28,23 +28,34 @@ npm install useful-react-hooks
 
 ## Usage
 
-#useAxios
+### useAxios
+
+#### Call setAxiosDefaultConfig and setAxiosAuthConfig to set the default config
+#### for all useAxios hooks. 
 ```javascript
 //in index.js
 import {setAxiosDefaultConfig, setAxiosAuthConfig} from 'useful-react-hooks';
 
 // use Axios Config to generate default configuration.
 setAxiosDefaultConfig({baseURL: "http://some-base-url/", timeout: 1000});
+
 //then use useAxios hook in component. 
 const [request, value, error, isloading] = useAxios();
 useEffect(() => {
     request.get('api/url');
 }, []);
 return (
+    <>
+    {isLoading && <div>is loading</div>}
     {value && value.map(item => <div>{item}</div>)}
+    {error && <p>{error}</p>}
+    </>
 )
+```
 
-
+#### Setup useAxios in component. This does not set the default config for 
+#### other useAxios calls. 
+```javascript
 // or use config setup in component. 
 const [request, value, error, isLoading] = useAxios({baseURL: 
 "https://some-url/", timeout: 1000});
@@ -58,7 +69,6 @@ return (
     {error && <p>{error}</p>}
     </>
 )
-
 ```
 
 ## Author
