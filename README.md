@@ -31,7 +31,7 @@ npm install useful-react-hooks
 ### useAxios
 
 #### Call setAxiosDefaultConfig and setAxiosAuthConfig to set the default config
-#### for all useAxios hooks. 
+for all useAxios hooks. 
 ```javascript
 //in index.js
 import {setAxiosDefaultConfig, setAxiosAuthConfig} from 'useful-react-hooks';
