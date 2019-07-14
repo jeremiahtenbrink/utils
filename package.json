@@ -1,6 +1,6 @@
 {
   "name": "useful-react-hooks",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "author": "Jeremiah Tenbrink <jeremiahtenbrink@gmail.com>",
   "description": "A set of custom useful hooks to be used in React Applications.",
@@ -13,8 +13,7 @@
     "url": "https://github.com/jeremiahtenbrink/useful-hooks/issues"
   },
   "homepage": "https://github.com/jeremiahtenbrink/useful-hooks",
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "axios": "^0.x",
     "react": "^16.8.x",
