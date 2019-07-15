@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-export default function useLocalStorageState( key, initialValue = null ){
-    const invalidKey = typeof key !== "string" || key.length > 0;
+export const useLocalStorageState = ( key: string, initialValue: any = null ) => {
+    const invalidKey = typeof key !== "string" || key.length === 0;
     
     if( invalidKey ){
         throw TypeError( "Storage key must be a non-empty string." );
@@ -19,7 +19,7 @@ export default function useLocalStorageState( key, initialValue = null ){
     } );
     
     useEffect( () => {
-        window.localStorage.setItem( key, state );
+        window.localStorage.setItem( key, JSON.stringify(state) );
     }, [ state ] );
     
     return [ state, setState ];

@@ -1,35 +1,50 @@
-import { useState, useEffect, ChangeEvent, FormEvent, } from 'react';
+import {
+  useState, useEffect, ChangeEvent, FormEvent, Dispatch, SetStateAction
+} from 'react';
 
 export const useForm = ( onSubmit: ( IValues ) => void,
-                         initialValues: IValues ):
-  [ any,
-    ( e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => void,
-    ( e: FormEvent | undefined ) => void,
-    () => void ] => {
-  const [ values, setValues ] = useState( { ...initialValues } );
+                         formDefaultValues: {} = {} ): [ FormValues, HandleFunctions ] => {
   
-  const handleChange = ( e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ): void => {
+  let [ defaultValues, setDefaultValues ] = useState( formDefaultValues );
+  const [ values, setValues ]: [ FormValues, Dispatch<SetStateAction<FormValues>> ] = useState(
+    formDefaultValues );
+  
+  const change = ( e: any ): void => {
+    if ( e.target.type === "checkbox" ) {
+      let { name, checked } = e.target as HTMLInputElement;
+      if ( !defaultValues[ name ] ) {
+        setDefaultValues( { ...defaultValues, [ name ]: false } );
+      }
+      setValues( { ...values, [ name ]: checked } );
+      return;
+    }
     
     const { name, value } = e.target;
     setValues( prevValues => ( { ...prevValues, [ name ]: value } ) );
   };
   
-  const handleSubmit = ( e: FormEvent | undefined ): void => {
-    if ( e.preventDefault ) {
+  const submit = ( e: Event | FormEvent ): void => {
+    if ( e && e.preventDefault ) {
       e.preventDefault();
     }
     onSubmit( values );
-    setValues( { ...initialValues } );
+    setValues( defaultValues );
   };
   
-  const handleClear = (): void => {
-    setValues( { ...initialValues } );
+  const clear = (): void => {
+    setValues( defaultValues );
   };
   
-  return [ values, handleChange, handleSubmit, handleClear ];
+  return [ values, { change, submit, clear } ];
 };
 
-interface IValues {
+interface HandleFunctions {
+  change: ( e: any ) => void;
+  submit: ( e: Event | FormEvent ) => void;
+  clear: () => void;
+}
+
+interface FormValues {
   [ name: string ]: any
 }
 
