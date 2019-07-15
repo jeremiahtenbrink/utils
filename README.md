@@ -29,7 +29,7 @@ npm install useful-react-hooks
 
 ### useAxios
 
-#### Call setAxiosDefaultConfig and setAxiosAuthConfig to set the default and auth config for all useAxios hooks. 
+#### Call setAxiosDefaultConfig and setAxiosAuthConfig to set the default and auth config for all useAxios hooks.
 ```javascript
 //in index.js
 import {setAxiosDefaultConfig, setAxiosAuthConfig} from 'useful-react-hooks';
@@ -42,13 +42,13 @@ setAxiosDefaultConfig({baseURL: 'http://some-base-url/',
                                    authorization: "userTokenGoesHere"
                                }});
 
-//then use useAxios hook in component. 
+//then use useAxios hook in component.
 const [request, value, error, isloading] = useAxios();
 useEffect(() => {
-    // default axios request. 
+    // default axios request.
     request.get('api/url');
-    //axious with auth api request. 
-    request.get('api/auth', true);    
+    //axious with auth api request.
+    request.get('api/auth', true);
 }, []);
 return (
     <>
@@ -59,22 +59,88 @@ return (
 )
 ```
 
-#### Setup useAxios in component. This does not set the default config for other useAxios calls. 
+#### Setup useAxios in component. This does not set the default config for other useAxios calls.
 ```javascript
-// or use config setup in component. 
-const [request, value, error, isLoading] = useAxios({baseURL: 
+// or use config setup in component.
+const [request, value, error, isLoading] = useAxios({baseURL:
 "https://some-url/", timeout: 1000});
 return (
     <>
     {isLoading && <div>loading</div>}
     <button onClick={() => request.post('someUrl', object)}>click me</button>
     <button onClick={() => request.put('someUrl', object)}>click me</button>
-    <button onClick={() => request.del('someUrl/SomeId', object)}>click 
+    <button onClick={() => request.del('someUrl/SomeId', object)}>click
     me</button>
     {error && <p>{error}</p>}
     </>
 )
 ```
+
+# useForm
+
+```js
+import React from "react";
+import Axios from "axios";
+
+// Import useForm hook
+import { useForm } from "useful-react-hooks";
+
+function App() {
+/*
+  useForm returns an array of 2 items
+  The first item is a read only value (state)
+  The second item is an object that includes 3 handler functions
+
+  1) change, handles input changes
+  2) submit, (handles form submission)
+  3) clear, (clears form inputs)
+
+*/
+
+// useForm accepts two arguments
+const [state, handle] = useForm(
+// First argument is your initial state
+{
+  username: "John",
+  password: "Dough"
+},
+// Second argument is your submit handler
+handleAddUser
+);
+
+function handleAddUser() {
+Axios.post("/api/users/add", state)
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.log(err.response.data.message);
+  });
+
+// Clears form inputs
+handle.clear();
+}
+
+return (
+  <div className="App">
+    <form onSubmit={handle.submit}>
+      <input
+        name="username"
+        value={state.username}
+        onChange={handle.change}
+      />
+
+      <input
+        type="password"
+        name="password"
+        value={state.password}
+        onChange={handle.change}
+      />
+    </form>
+  </div>
+);
+}
+````
 
 ## Author
 
