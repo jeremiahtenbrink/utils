@@ -1,14 +1,14 @@
 import {
-  useState, useEffect, ChangeEvent, FormEvent, Dispatch, SetStateAction
+  useState, FormEvent, Dispatch, SetStateAction
 } from 'react';
 
 export const useForm = ( onSubmit: ( IValues ) => void,
                          formDefaultValues: {} = {} ): [ FormValues, HandleFunctions ] => {
-
+  
   let [ defaultValues, setDefaultValues ] = useState( formDefaultValues );
   const [ values, setValues ]: [ FormValues, Dispatch<SetStateAction<FormValues>> ] = useState(
     formDefaultValues );
-
+  
   const change = ( e: any ): void => {
     if ( e.target.type === "checkbox" ) {
       let { name, checked } = e.target as HTMLInputElement;
@@ -18,11 +18,11 @@ export const useForm = ( onSubmit: ( IValues ) => void,
       setValues( { ...values, [ name ]: checked } );
       return;
     }
-
+    
     const { name, value } = e.target;
     setValues( prevValues => ( { ...prevValues, [ name ]: value } ) );
   };
-
+  
   const submit = ( e: Event | FormEvent ): void => {
     if ( e && e.preventDefault ) {
       e.preventDefault();
@@ -30,11 +30,11 @@ export const useForm = ( onSubmit: ( IValues ) => void,
     onSubmit( values );
     setValues( defaultValues );
   };
-
+  
   const clear = (): void => {
     setValues( defaultValues );
   };
-
+  
   return [ values, { change, submit, clear } ];
 };
 
