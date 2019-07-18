@@ -14,7 +14,6 @@
   },
   "homepage": "https://github.com/jeremiahtenbrink/useful-hooks",
   "dependencies": {
-    "cryptr": "^4.0.2"
   },
   "peerDependencies": {
     "axios": "^0.x",
