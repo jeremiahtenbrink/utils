@@ -33,7 +33,7 @@ export const useDecryption = ( toDecrypt?: string ): IUseDecryption => {
 
 
 export const setEncryptionConfig = ( key: string ) => {
-  debugger;
+  
   EncryptionConfig.setCryptr( key );
 };
 

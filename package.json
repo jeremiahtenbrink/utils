@@ -1,6 +1,6 @@
 {
   "name": "useful-react-hooks",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "author": "Jeremiah Tenbrink <jeremiahtenbrink@gmail.com>",
   "description": "A set of custom useful hooks to be used in React Applications.",
