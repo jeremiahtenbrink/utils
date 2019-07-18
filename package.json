@@ -13,12 +13,15 @@
     "url": "https://github.com/jeremiahtenbrink/useful-hooks/issues"
   },
   "homepage": "https://github.com/jeremiahtenbrink/useful-hooks",
-  "dependencies": {},
+  "dependencies": {
+    "cryptr": "^4.0.2"
+  },
   "peerDependencies": {
     "axios": "^0.x",
     "react": "^16.8.x",
     "react-dom": "^16.8.x",
-    "react-scripts": "3.x"
+    "react-scripts": "3.x",
+    "cryptr": "^4.x"
   },
   "devDependencies": {
     "typescript": "^3.5.3",

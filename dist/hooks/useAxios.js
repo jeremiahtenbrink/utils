@@ -10,83 +10,94 @@ exports.useAxios = function (config) {
     var _a = react_1.useState(null), value = _a[0], setValue = _a[1];
     var _b = react_1.useState(""), error = _b[0], setError = _b[1];
     var _c = react_1.useState(false), isLoading = _c[0], setIsLoading = _c[1];
-    var _d = react_1.useState(null), axiosRequest = _d[0], setAxiosRequest = _d[1];
-    var _e = react_1.useState(null), axiosAuthRequest = _e[0], setAxiosAuthRequest = _e[1];
-    react_1.useEffect(function () {
-        if (config) {
-            setAxiosRequest(axiosConfig_1.default.createAxiosRequest(config));
-        }
-        else {
-            setAxiosRequest(axiosConfig_1.default.getDefaultAxios());
-        }
-        setAxiosAuthRequest(axiosConfig_1.default.getAuthAxios());
-    }, []);
+    var axiosRequest = config && axiosConfig_1.default.createAxiosRequest(config);
+    var defaultRequest = !config;
     var get = function (url, auth) {
         if (auth === void 0) { auth = false; }
-        var request = axiosRequest;
+        debugger;
+        var request = axiosConfig_1.default.getDefaultAxios();
         if (auth) {
-            request = axiosAuthRequest;
+            request = axiosConfig_1.default.getAuthAxios();
         }
-        setIsLoading(true);
-        request.get(url).then(function (res) {
-            setValue(res.data);
-            setIsLoading(false);
-            setError("");
-        }).catch(function (err) {
-            setError(err.message);
-            setIsLoading(false);
-        });
+        else if (!defaultRequest) {
+            request = axiosRequest;
+        }
+        if (request) {
+            setIsLoading(true);
+            request.get(url).then(function (res) {
+                setValue(res.data);
+                setIsLoading(false);
+                setError("");
+            }).catch(function (err) {
+                setError(err.message);
+                setIsLoading(false);
+            });
+        }
     };
     var post = function (url, data, auth) {
         if (auth === void 0) { auth = false; }
-        var request = axiosRequest;
+        var request = axiosConfig_1.default.getDefaultAxios();
         if (auth) {
-            request = axiosAuthRequest;
+            request = axiosConfig_1.default.getAuthAxios();
+        }
+        else if (!defaultRequest) {
+            request = axiosRequest;
         }
         setIsLoading(true);
-        request.post(url, data).then(function (res) {
-            setValue(res.data);
-        }).catch(function (err) {
-            setError(err.message);
-        }).finally(function () { return setIsLoading(false); });
+        if (request) {
+            request.post(url, data).then(function (res) {
+                setValue(res.data);
+            }).catch(function (err) {
+                setError(err.message);
+            }).finally(function () { return setIsLoading(false); });
+        }
     };
     var put = function (url, data, auth) {
         if (auth === void 0) { auth = false; }
-        var request = axiosRequest;
+        var request = axiosConfig_1.default.getDefaultAxios();
         if (auth) {
-            request = axiosAuthRequest;
+            request = axiosConfig_1.default.getAuthAxios();
+        }
+        else if (!defaultRequest) {
+            request = axiosRequest;
         }
         setIsLoading(true);
-        request.put(url, data).then(function (res) {
-            setValue(res.data);
-        }).catch(function (err) {
-            setError(err.message);
-        }).finally(function () { return setIsLoading(false); });
+        if (request) {
+            request.put(url, data).then(function (res) {
+                setValue(res.data);
+            }).catch(function (err) {
+                setError(err.message);
+            }).finally(function () { return setIsLoading(false); });
+        }
     };
     var del = function (url, object, auth) {
         if (auth === void 0) { auth = false; }
-        var request = axiosRequest;
+        var request = axiosConfig_1.default.getDefaultAxios();
         if (auth) {
-            request = axiosAuthRequest;
+            request = axiosConfig_1.default.getAuthAxios();
+        }
+        else if (!defaultRequest) {
+            request = axiosRequest;
         }
         setIsLoading(true);
-        request.delete(url, object).then(function (res) {
-            setValue(res.data);
-        }).catch(function (err) {
-            setError(err.message);
-        }).finally(function () { return setIsLoading(false); });
-    };
-    var setDefaultConfig = function (config) {
-        axiosConfig_1.default.setDefaultConfig(config);
-        setAxiosRequest(axiosConfig_1.default.getDefaultAxios());
-    };
-    var setAuthConfig = function (config) {
-        axiosConfig_1.default.setAuthConfig(config);
-        setAxiosAuthRequest(axiosConfig_1.default.getDefaultAxios());
+        if (request) {
+            request.delete(url, object).then(function (res) {
+                setValue(res.data);
+            }).catch(function (err) {
+                setError(err.message);
+            }).finally(function () { return setIsLoading(false); });
+        }
     };
     return [
-        { get: get, post: post, put: put, del: del, setDefaultConfig: setDefaultConfig, setAuthConfig: setAuthConfig }, value, error,
+        { get: get, post: post, put: put, del: del }, value, error,
         isLoading
     ];
+};
+exports.setAxiosDefaultConfig = function (config) {
+    debugger;
+    axiosConfig_1.default.setDefaultConfig(config);
+};
+exports.setAxiosAuthConfig = function (config) {
+    axiosConfig_1.default.setAuthConfig(config);
 };
 //# sourceMappingURL=useAxios.js.map
