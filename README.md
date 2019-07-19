@@ -78,7 +78,7 @@ return (
 
 # useForm
 
-```js
+```jsx
 import React from "react";
 import Axios from "axios";
 
@@ -109,21 +109,21 @@ handleAddUser
 );
 
 function handleAddUser() {
-Axios.post("/api/users/add", state)
-  .then(response => {
-    console.log(response);
-  })
-  .catch(err => {
-    console.log(err.response.data.message);
-  });
+  Axios.post("/api/users/add", state)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err => {
+      console.log(err.response.data.message);
+    });
 
-// Clears form inputs
-handle.clear();
+  // Clears form inputs
+  handle.clear();
 }
 
 return (
   <div className="App">
-    <form onSubmit={handle.submit}>
+    <form onSubmit={handle.submit}> 
       <input
         name="username"
         value={state.username}
