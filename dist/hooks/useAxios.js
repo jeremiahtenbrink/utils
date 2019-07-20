@@ -14,7 +14,6 @@ exports.useAxios = function (config) {
     var defaultRequest = !config;
     var get = function (url, auth) {
         if (auth === void 0) { auth = false; }
-        debugger;
         var request = axiosConfig_1.default.getDefaultAxios();
         if (auth) {
             request = axiosConfig_1.default.getAuthAxios();
@@ -94,7 +93,6 @@ exports.useAxios = function (config) {
     ];
 };
 exports.setAxiosDefaultConfig = function (config) {
-    debugger;
     axiosConfig_1.default.setDefaultConfig(config);
 };
 exports.setAxiosAuthConfig = function (config) {

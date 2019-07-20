@@ -28,7 +28,6 @@ exports.useDecryption = function (toDecrypt) {
     return [decrypted, setValue];
 };
 exports.setEncryptionConfig = function (key) {
-    debugger;
     encryptionConfig_1.default.setCryptr(key);
 };
 //# sourceMappingURL=useEncryption.js.map
