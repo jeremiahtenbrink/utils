@@ -3,8 +3,10 @@ import { useEffect, useState, Dispatch, SetStateAction } from "react";
 
 export const useEncryption = ( toEncrypt?: any ): UseEncryption => {
   
-  const [ value, setValue ]: [ any, Dispatch<SetStateAction<any>> ] = useState( toEncrypt );
-  const [ encrypted, setEncrypted ]: [ string, Dispatch<SetStateAction<string>> ] = useState('');
+  const [ value, setValue ]: [ any, Dispatch<SetStateAction<any>> ] = useState(
+    toEncrypt );
+  const [ encrypted, setEncrypted ]: [ string, Dispatch<SetStateAction<string>> ] = useState(
+    '' );
   
   useEffect( () => {
     if ( value ) {
@@ -18,7 +20,8 @@ export const useEncryption = ( toEncrypt?: any ): UseEncryption => {
 };
 
 export const useDecryption = ( toDecrypt?: string ): UseDecryption => {
-  const [ value, setValue ]: [ string | undefined, Dispatch<SetStateAction<string | undefined>> ] = useState( toDecrypt );
+  const [ value, setValue ]: [ string | undefined, Dispatch<SetStateAction<string | undefined>> ] = useState(
+    toDecrypt );
   const [ decrypted, setDecrypted ] = useState();
   
   useEffect( () => {
@@ -31,5 +34,5 @@ export const useDecryption = ( toDecrypt?: string ): UseDecryption => {
   return [ decrypted, setValue ];
 };
 
-type UseEncryption = [ string, Dispatch<SetStateAction<string>> ];
-type UseDecryption = [ string | {}, Dispatch<SetStateAction<string | undefined>>  ];
+export type UseEncryption = [ string, Dispatch<SetStateAction<string>> ];
+export type UseDecryption = [ string | object, Dispatch<SetStateAction<string | undefined>> ];

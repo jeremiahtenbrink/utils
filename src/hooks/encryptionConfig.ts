@@ -1,5 +1,8 @@
 import Cryptr from 'cryptr';
 
+/**
+ * @ignore
+ */
 class EncryptionConfig {
   
   private static cryptr: Cryptr;

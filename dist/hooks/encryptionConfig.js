@@ -4,10 +4,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var cryptr_1 = __importDefault(require("cryptr"));
+/**
+ * @ignore
+ */
 var EncryptionConfig = /** @class */ (function () {
     function EncryptionConfig() {
     }
     EncryptionConfig.encrypt = function (value) {
+        if (typeof value === "undefined" || typeof value === null) {
+            return '';
+        }
         if (typeof value === 'string') {
             return EncryptionConfig.cryptr.encrypt(value);
         }
@@ -16,12 +22,20 @@ var EncryptionConfig = /** @class */ (function () {
         }
     };
     EncryptionConfig.decrypt = function (value) {
-        var decryptedValue = EncryptionConfig.cryptr.decrypt(value);
-        if (JSON.parse(decryptedValue)) {
-            return JSON.parse(decryptedValue);
+        if (typeof value === "undefined" || typeof value === null) {
+            return '';
         }
-        else {
-            return decryptedValue;
+        try {
+            var decryptedValue = EncryptionConfig.cryptr.decrypt(value);
+            try {
+                return JSON.parse(decryptedValue);
+            }
+            catch (_a) {
+                return decryptedValue;
+            }
+        }
+        catch (_b) {
+            return value;
         }
     };
     EncryptionConfig.setCryptr = function (key) {
@@ -29,5 +43,8 @@ var EncryptionConfig = /** @class */ (function () {
     };
     return EncryptionConfig;
 }());
+exports.setEncryptionConfig = function (key) {
+    EncryptionConfig.setCryptr(key);
+};
 exports.default = EncryptionConfig;
 //# sourceMappingURL=encryptionConfig.js.map

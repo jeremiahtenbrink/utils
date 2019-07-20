@@ -38,13 +38,13 @@ export const useForm = ( onSubmit: ( IValues ) => void,
   return [ values, { change, submit, clear } ];
 };
 
-interface HandleFunctions {
+export interface HandleFunctions {
   change: ( e: any ) => void;
   submit: ( e: Event | FormEvent ) => void;
   clear: () => void;
 }
 
-interface FormValues {
+export interface FormValues {
   [ name: string ]: any
 }
 

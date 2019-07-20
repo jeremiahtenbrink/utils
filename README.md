@@ -30,7 +30,8 @@ npm install useful-react-hooks
 ### useAxios
 
 #### Call setAxiosDefaultConfig and setAxiosAuthConfig to set the default and auth config for all useAxios hooks.
-```jsx harmony
+
+```jsx
 //in index.js
 import {setAxiosDefaultConfig, setAxiosAuthConfig} from 'useful-react-hooks';
 
@@ -44,7 +45,7 @@ setAxiosAuthConfig({baseURL: 'http://some-base-url/',
                                }});
 ```
 #### Then call useAxios inside of your component. 
-```jsx harmony
+```jsx
 import {useAxios} from 'useful-react-hooks';
 
 function Component() {
@@ -79,7 +80,7 @@ function Component() {
 ```
 
 #### Setup useAxios in component. This does not set the default config for other useAxios calls.
-```jsx harmony
+```jsx
 // or use config setup in component.
 const [request, value, error, isLoading] = useAxios({baseURL:
 "https://some-url/", timeout: 1000});
@@ -98,7 +99,7 @@ return (
 
 # useForm
 
-```jsx harmony
+```jsx
 import React, {useEffect} from "react";
 import {useAxios} from "useful-react-hooks"; // be sure to follow useAxios setup.
 
@@ -171,7 +172,7 @@ function App() {
 
 #### First you must setup the encryption config. Please note that keys in a react app are not safe. They end up in the build of the app and the client will have access to them. If you truly want to set up a safe key. I believe you would want to keep it on your backend and do a http request to your server to retrieve it. I am by no means a security expert. 
 
-```jsx harmony
+```jsx
 //index.js
 import React from 'react';
 import {setEncryptionConfig} from 'useful-react-hooks';
@@ -183,7 +184,7 @@ setEncryptionConfig(process.env.REACT_APP_USEFUL_HOOKS_ENCRYPTION_KEY ||
 #### free to use useEncryption and useDecryption through out your app. 
 
 #### useEncryption
-```jsx harmony
+```jsx
 import React, {useEffect} from 'react';
 import {useEncryption} from 'useful-react-hooks';
 
@@ -210,7 +211,7 @@ function App (props) {
 ```
 
 #### useDecryption
-```jsx harmony
+```jsx
 import React, {useEffect} from 'react';
 import {useDecryption} from 'useful-react-hooks';
 

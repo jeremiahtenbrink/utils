@@ -5,6 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var axiosConfig_1 = __importDefault(require("./axiosConfig"));
+/**
+ * useAxios custom hook. Takes in one optional parameter.
+ *
+ * @param config  Default axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ */
 exports.useAxios = function (config) {
     if (config === void 0) { config = null; }
     var _a = react_1.useState(null), value = _a[0], setValue = _a[1];
@@ -92,9 +97,23 @@ exports.useAxios = function (config) {
         isLoading
     ];
 };
+/**
+ * ## setAxiosDefaultConfig
+ * Call this function early in your application to set the default configuration on all future axios calls.
+ *
+ * @param config Default axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ * @return void
+ */
 exports.setAxiosDefaultConfig = function (config) {
     axiosConfig_1.default.setDefaultConfig(config);
 };
+/**
+ * ## setAxiosAuthConfig
+ * Call this function early in your application to set the auth configuration
+ * on all future axios calls.
+ *
+ * @param config Axios auth request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ */
 exports.setAxiosAuthConfig = function (config) {
     axiosConfig_1.default.setAuthConfig(config);
 };

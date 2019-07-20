@@ -4,9 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = __importDefault(require("axios"));
+/**
+ * @ignore
+ */
 var defaultConfig = {
     timeout: 1000,
 };
+/**
+ * @ignore
+ */
 var AxiosConfig = /** @class */ (function () {
     function AxiosConfig() {
     }
@@ -29,5 +35,8 @@ var AxiosConfig = /** @class */ (function () {
     AxiosConfig.axiosAuthRequest = axios_1.default.create(defaultConfig);
     return AxiosConfig;
 }());
+/**
+ * @ignore
+ */
 exports.default = AxiosConfig;
 //# sourceMappingURL=axiosConfig.js.map

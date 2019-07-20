@@ -1,9 +1,15 @@
 import axios, {AxiosRequestConfig, AxiosInstance} from "axios";
 
+/**
+ * @ignore
+ */
 const defaultConfig: AxiosRequestConfig = {
     timeout: 1000,
 };
 
+/**
+ * @ignore
+ */
 class AxiosConfig{
     
     static axiosRequest = axios.create( defaultConfig );
@@ -31,4 +37,7 @@ class AxiosConfig{
     
 }
 
+/**
+ * @ignore
+ */
 export default AxiosConfig;

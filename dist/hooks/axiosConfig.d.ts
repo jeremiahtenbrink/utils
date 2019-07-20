@@ -1,4 +1,7 @@
 import { AxiosRequestConfig, AxiosInstance } from "axios";
+/**
+ * @ignore
+ */
 declare class AxiosConfig {
     static axiosRequest: AxiosInstance;
     static axiosAuthRequest: AxiosInstance;
@@ -8,4 +11,7 @@ declare class AxiosConfig {
     static getAuthAxios(): AxiosInstance;
     static createAxiosRequest(config: AxiosRequestConfig): AxiosInstance;
 }
+/**
+ * @ignore
+ */
 export default AxiosConfig;

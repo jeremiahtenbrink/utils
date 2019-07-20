@@ -42,6 +42,6 @@ const useLocalStorage = ( key: string,
   return [ storedValue, setValue, removeValue ];
 };
 
-type SetValue = ( value: any ) => void;
-type RemoveValue = () => void;
+export type SetValue = ( value: any ) => void;
+export type RemoveValue = () => void;
 export default useLocalStorage;

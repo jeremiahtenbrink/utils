@@ -3,6 +3,12 @@ import AxiosConfig from "./axiosConfig";
 import axios, { AxiosInstance } from 'axios';
 import { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 
+/**
+ * useAxios custom hook. Takes in one optional parameter.
+ *
+ * @param config  Default axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ */
+
 export const useAxios = ( config: AxiosRequestConfig | null = null ): [ IRequest, any, string, boolean ] => {
   
   const [ value, setValue ]: [ any, ( value: any ) => void ] = useState( null );
@@ -100,16 +106,30 @@ export const useAxios = ( config: AxiosRequestConfig | null = null ): [ IRequest
   ];
 };
 
+/**
+ * ## setAxiosDefaultConfig
+ * Call this function early in your application to set the default configuration on all future axios calls.
+ *
+ * @param config Default axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ * @return void
+ */
 export const setAxiosDefaultConfig = ( config: AxiosConfig ): void => {
   
   AxiosConfig.setDefaultConfig( config );
 };
 
+/**
+ * ## setAxiosAuthConfig
+ * Call this function early in your application to set the auth configuration
+ * on all future axios calls.
+ *
+ * @param config Axios auth request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ */
 export const setAxiosAuthConfig = ( config: AxiosConfig ): void => {
   AxiosConfig.setAuthConfig( config );
 };
 
-interface IRequest {
+export interface IRequest {
   
   get: ( url: string, useAuth?: boolean ) => void;
   post: ( url: string, useAuth?: boolean ) => void;

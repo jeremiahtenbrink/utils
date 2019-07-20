@@ -7,7 +7,7 @@ var encryptionConfig_1 = __importDefault(require("./encryptionConfig"));
 var react_1 = require("react");
 exports.useEncryption = function (toEncrypt) {
     var _a = react_1.useState(toEncrypt), value = _a[0], setValue = _a[1];
-    var _b = react_1.useState(), encrypted = _b[0], setEncrypted = _b[1];
+    var _b = react_1.useState(''), encrypted = _b[0], setEncrypted = _b[1];
     react_1.useEffect(function () {
         if (value) {
             var encrypted_1 = encryptionConfig_1.default.encrypt(value);
@@ -26,8 +26,5 @@ exports.useDecryption = function (toDecrypt) {
         }
     }, [value]);
     return [decrypted, setValue];
-};
-exports.setEncryptionConfig = function (key) {
-    encryptionConfig_1.default.setCryptr(key);
 };
 //# sourceMappingURL=useEncryption.js.map

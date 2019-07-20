@@ -80,5 +80,15 @@
   ],
   "include": [
     "src/"
-  ]
+  ],
+  "typedocOptions": {
+    "mode": "file",
+    "out": "docs",
+    "includeDeclarations": true,
+    "includes": "./src/",
+    "excludeExternals": true,
+    "excludeNotExported": true,
+    "theme": "default",
+    "readme": "none"
+  }
 }
