@@ -41,22 +41,27 @@ setAxiosAuthConfig({baseURL: 'http://some-base-url/',
                                headers: {
                                    authorization: "userTokenGoesHere"
                                }});
+```
+#### Then call useAxios inside of your component. 
+```javascript
+import {useAxios} from 'useful-react-hooks';
 
-//then use useAxios hook in component.
-const [request, value, error, isloading] = useAxios();
-useEffect(() => {
-    // default axios request.
-    request.get('api/url');
-    //axious with auth api request.
-    request.get('api/auth', true);
-}, []);
-return (
-    <>
-    {isLoading && <div>is loading</div>}
-    {value && value.map(item => <div>{item}</div>)}
-    {error && <p>{error}</p>}
-    </>
-)
+function Component() {
+    const [request, value, error, isloading] = useAxios();
+    useEffect(() => {
+        // default axios request.
+        request.get('api/url');
+        //axious with auth api request.
+        request.get('api/auth', true);
+    }, []);
+    return (
+        <>
+        {isLoading && <div>is loading</div>}
+        {value && value.map(item => <div>{item}</div>)}
+        {error && <p>{error}</p>}
+        </>
+    )
+}
 ```
 
 #### Setup useAxios in component. This does not set the default config for other useAxios calls.
@@ -64,12 +69,14 @@ return (
 // or use config setup in component.
 const [request, value, error, isLoading] = useAxios({baseURL:
 "https://some-url/", timeout: 1000});
+const useAuthAxios = true;
+
 return (
     <>
     {isLoading && <div>loading</div>}
-    <button onClick={() => request.post('someUrl', object)}>click me</button>
+    <button onClick={() => request.post('someUrl', object, useAuthAxios)}>click me</button>
     <button onClick={() => request.put('someUrl', object)}>click me</button>
-    <button onClick={() => request.del('someUrl/SomeId', object)}>click
+    <button onClick={() => request.del('someUrl/SomeId', object, useAuthAxios)}>click
     me</button>
     {error && <p>{error}</p>}
     </>
