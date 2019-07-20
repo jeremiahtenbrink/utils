@@ -12,25 +12,36 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-exports.useForm = function (onSubmit, initialValues) {
-    var _a = react_1.useState(__assign({}, initialValues)), values = _a[0], setValues = _a[1];
-    var handleChange = function (e) {
-        var _a = e.target, name = _a.name, value = _a.value;
+exports.useForm = function (onSubmit, formDefaultValues) {
+    if (formDefaultValues === void 0) { formDefaultValues = {}; }
+    var _a = react_1.useState(formDefaultValues), defaultValues = _a[0], setDefaultValues = _a[1];
+    var _b = react_1.useState(formDefaultValues), values = _b[0], setValues = _b[1];
+    var change = function (e) {
+        var _a, _b;
+        if (e.target.type === "checkbox") {
+            var _c = e.target, name_1 = _c.name, checked = _c.checked;
+            if (!defaultValues[name_1]) {
+                setDefaultValues(__assign({}, defaultValues, (_a = {}, _a[name_1] = false, _a)));
+            }
+            setValues(__assign({}, values, (_b = {}, _b[name_1] = checked, _b)));
+            return;
+        }
+        var _d = e.target, name = _d.name, value = _d.value;
         setValues(function (prevValues) {
             var _a;
             return (__assign({}, prevValues, (_a = {}, _a[name] = value, _a)));
         });
     };
-    var handleSubmit = function (e) {
-        if (e.preventDefault) {
+    var submit = function (e) {
+        if (e && e.preventDefault) {
             e.preventDefault();
         }
         onSubmit(values);
-        setValues(__assign({}, initialValues));
+        setValues(defaultValues);
     };
-    var handleClear = function () {
-        setValues(__assign({}, initialValues));
+    var clear = function () {
+        setValues(defaultValues);
     };
-    return [values, handleChange, handleSubmit, handleClear];
+    return [values, { change: change, submit: submit, clear: clear }];
 };
 //# sourceMappingURL=useForm.js.map

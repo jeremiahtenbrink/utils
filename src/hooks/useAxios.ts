@@ -16,7 +16,7 @@ export const useAxios = ( config: AxiosRequestConfig | null = null ): [ IRequest
   const defaultRequest = !config;
   
   const get = ( url: string, auth: boolean = false ): void => {
-    debugger;
+    
     let request = AxiosConfig.getDefaultAxios();
     if ( auth ) {
       request = AxiosConfig.getAuthAxios();
@@ -101,7 +101,7 @@ export const useAxios = ( config: AxiosRequestConfig | null = null ): [ IRequest
 };
 
 export const setAxiosDefaultConfig = ( config: AxiosConfig ): void => {
-  debugger;
+  
   AxiosConfig.setDefaultConfig( config );
 };
 

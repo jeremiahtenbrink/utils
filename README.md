@@ -36,7 +36,7 @@ import {setAxiosDefaultConfig, setAxiosAuthConfig} from 'useful-react-hooks';
 
 // use Axios Config to generate default configuration.
 setAxiosDefaultConfig({baseURL: "http://some-base-url/", timeout: 1000});
-setAxiosDefaultConfig({baseURL: 'http://some-base-url/',
+setAxiosAuthConfig({baseURL: 'http://some-base-url/',
                                timeout: 1000,
                                headers: {
                                    authorization: "userTokenGoesHere"

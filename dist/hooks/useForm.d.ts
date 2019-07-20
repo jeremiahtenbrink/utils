@@ -1,6 +1,11 @@
-import { ChangeEvent, FormEvent } from 'react';
-export declare const useForm: (onSubmit: (IValues: any) => void, initialValues: IValues) => [any, (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void, (e: FormEvent<Element>) => void, () => void];
-interface IValues {
+import { FormEvent } from 'react';
+export declare const useForm: (onSubmit: (IValues: any) => void, formDefaultValues?: {}) => [FormValues, HandleFunctions];
+interface HandleFunctions {
+    change: (e: any) => void;
+    submit: (e: Event | FormEvent) => void;
+    clear: () => void;
+}
+interface FormValues {
     [name: string]: any;
 }
 export {};
