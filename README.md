@@ -167,7 +167,7 @@ function App() {
 }
 ````
 
-# useEncryption
+# useEncryption && useDecryption
 
 #### First you must setup the encryption config. Please note that keys in a react app are not safe. They end up in the build of the app and the client will have access to them. If you truly want to set up a safe key. I believe you would want to keep it on your backend and do a http request to your server to retrieve it. I am by no means a security expert. 
 
