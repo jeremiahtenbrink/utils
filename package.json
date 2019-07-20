@@ -12,24 +12,22 @@
   "bugs": {
     "url": "https://github.com/jeremiahtenbrink/useful-hooks/issues"
   },
-
   "homepage": "https://github.com/jeremiahtenbrink/useful-hooks",
   "dependencies": {
-  },
-
-  "peerDependencies": {
     "axios": "^0.x",
+    "cryptr": "^4.x",
+    "jwt-decode": "^2.x",
     "react": "^16.8.x",
     "react-dom": "^16.8.x",
-    "react-scripts": "3.x",
-    "cryptr": "^4.x"
+    "react-scripts": "3.x"
   },
-
+  "peerDependencies": {},
   "devDependencies": {
-    "typescript": "^3.5.3",
+    "@types/jwt-decode": "^2.2.1",
     "@types/node": "^12.6.2",
     "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4"
+    "@types/react-dom": "^16.8.4",
+    "typescript": "^3.5.3"
   },
   "scripts": {
     "build": "tsc"

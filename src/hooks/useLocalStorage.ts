@@ -3,8 +3,10 @@ import EncryptionConfig from './encryptionConfig';
 
 const useLocalStorage = ( key: string,
                           initialValue?: any ): [ any, SetValue, RemoveValue ] => {
+  
   const [ encryptedKey, setEncryptedKey ]: [ string, Dispatch<SetStateAction<string>> ] = useState(
     () => EncryptionConfig.encrypt( key ) );
+  
   const [ storedValue, setStoredValue ]: [ any, Dispatch<SetStateAction<any>> ] = useState(
     () => {
       
@@ -33,6 +35,7 @@ const useLocalStorage = ( key: string,
   };
   
   const removeValue = (): void => {
+    
     window.localStorage.removeItem( encryptedKey );
   };
   
