@@ -98,69 +98,142 @@ return (
 
 # useForm
 
-```jsx
-import React from "react";
-import Axios from "axios";
+```jsx harmony
+import React, {useEffect} from "react";
+import {useAxios} from "useful-react-hooks"; // be sure to follow useAxios setup.
 
 // Import useForm hook
 import { useForm } from "useful-react-hooks";
 
 function App() {
-/*
-  useForm returns an array of 2 items
-  The first item is a read only value (state)
-  The second item is an object that includes 3 handler functions
+    /*
+      useForm returns an array of 2 items
+      The first item is a read only value (state)
+      The second item is an object that includes 3 handler functions
+    
+      1) change, handles input changes
+      2) submit, (handles form submission)
+      3) clear, (clears form inputs)
+    
+    */
+    // folow useAxios guide to set up useAxios.
+    const [request, value, error, isloading] = useAxios();
+    // useForm accepts two arguments
+    const [state, handle] = useForm(
+    // First argument is your initial state
+    {
+      username: "John",
+      password: "Dough"
+    },
+    // Second argument is your submit handler
+    handleAddUser
+    );
 
-  1) change, handles input changes
-  2) submit, (handles form submission)
-  3) clear, (clears form inputs)
+    const useAuth = true;
 
-*/
+    function handleAddUser() {
+        request.post("/api/users/add", state, useAuth);
+        
+      // Clears form inputs
+      handle.clear();
+    }
 
-// useForm accepts two arguments
-const [state, handle] = useForm(
-// First argument is your initial state
-{
-  username: "John",
-  password: "Dough"
-},
-// Second argument is your submit handler
-handleAddUser
-);
+    // Do something when the response from the axios request returns. 
+    useEffect(() => {
+        if(value){
+            console.log(value);
+        }
+    }, [value]);
 
-function handleAddUser() {
-  Axios.post("/api/users/add", state)
-    .then(response => {
-      console.log(response);
-    })
-    .catch(err => {
-      console.log(err.response.data.message);
-    });
-
-  // Clears form inputs
-  handle.clear();
-}
-
-return (
-  <div className="App">
-    <form onSubmit={handle.submit}> 
-      <input
-        name="username"
-        value={state.username}
-        onChange={handle.change}
-      />
-
-      <input
-        type="password"
-        name="password"
-        value={state.password}
-        onChange={handle.change}
-      />
-    </form>
-  </div>
-);
+    return (
+      <div className="App">
+        <form onSubmit={handle.submit}> 
+          <input
+            name="username"
+            value={state.username}
+            onChange={handle.change}
+          />
+    
+          <input
+            type="password"
+            name="password"
+            value={state.password}
+            onChange={handle.change}
+          />
+          <button onClick={handle.submit}>Submit</button>
+        </form>
+      </div>
+    );
 }
 ````
+
+# useEncryption
+
+#### First you must setup the encryption config. Please note that keys in a react app are not safe. They end up in the build of the app and the client will have access to them. If you truly want to set up a safe key. I believe you would want to keep it on your backend and do a http request to your server to retrieve it. I am by no means a security expert. 
+
+```jsx harmony
+//index.js
+import React from 'react';
+import {setEncryptionConfig} from 'useful-react-hooks';
+setEncryptionConfig(process.env.REACT_APP_USEFUL_HOOKS_ENCRYPTION_KEY ||
+                      "This is a totally not secret key");
+```
+
+#### Once it has been given a key as early in the app as possible. You are 
+#### free to use useEncryption and useDecryption through out your app. 
+
+#### useEncryption
+```jsx harmony
+import React, {useEffect} from 'react';
+import {useEncryption} from 'useful-react-hooks';
+
+function App (props) {
+    
+    // useEncryption takes one optional argument. 
+    // value to be encrypted can be a string or a object. 
+    // it returns a array of two items. The encrypted data and a function to 
+    // change the value to be encrypted. 
+    const [encrypted, setValueToEncrypt] = useEncryption({name: "To Encrypt"});
+    
+    useEffect(() => {
+        if (props.setValueToEncrypt){
+            // can call setValue to encrypt anywhere and it will update the 
+            //encrypted data
+            setValueToEncrypt(props.setValueToEncrypt);
+        }
+    }, [props.valueToEncrypt]);
+    
+    return (
+        <div>{encrypted}</div>
+    )
+}
+```
+
+#### useDecryption
+```jsx harmony
+import React, {useEffect} from 'react';
+import {useDecryption} from 'useful-react-hooks';
+
+function App (props) {
+    
+    // useDecryption takes one optional argument. Value to be decrypted. String
+    // return two items in a array, The decrypted data and a function to 
+    // change the value to be decrypted. 
+    const [decrypted, setValueToDecrypt] = useDecryption(props.valueToDecrypt);
+    
+    useEffect(() => {
+        if (props.valueToDecrypt){
+            // can call setValue to encrypt anywhere and it will update the 
+            //encrypted data
+            setValueToDecrypt(props.valueToDecrypt);
+        }
+    }, [props.valueToDecrypt]);
+    
+    return (
+        <div>{decrypted}</div>
+    )
+}
+```
 
 ## Author
 
