@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to useful-react-hooks 👋</h1>
 <p>
   <img src="https://img.shields.io/badge/version-0.1.8-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/jeremiahtenbrink/useful-hooks#readme">
+  <a href="https://github.com/jeremiahtenbrink/useful-hooks/docs/index.html">
     <img alt="Documentation" src="https://img.shields.io/badge/Documentation%3F-no-yellow.svg" target="_blank" />
   </a>
   <a href="https://github.com/jeremiahtenbrink/useful-hooks/graphs/commit-activity">
