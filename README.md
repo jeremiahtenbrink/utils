@@ -30,29 +30,43 @@ npm install useful-react-hooks
 ### useAxios
 
 #### Call setAxiosDefaultConfig and setAxiosAuthConfig to set the default and auth config for all useAxios hooks.
-```javascript
+```jsx harmony
 //in index.js
 import {setAxiosDefaultConfig, setAxiosAuthConfig} from 'useful-react-hooks';
 
-// use Axios Config to generate default configuration.
+// use Axios Config to generate default configuration. Look up axios config 
+// for config options
 setAxiosDefaultConfig({baseURL: "http://some-base-url/", timeout: 1000});
 setAxiosAuthConfig({baseURL: 'http://some-base-url/',
                                timeout: 1000,
                                headers: {
-                                   authorization: "userTokenGoesHere"
+                                   Authorization: "userTokenGoesHere"
                                }});
 ```
 #### Then call useAxios inside of your component. 
-```javascript
+```jsx harmony
 import {useAxios} from 'useful-react-hooks';
 
 function Component() {
+    /*
+        useAxios returns an array of items. 
+        first item is the request object used to make axios requests.
+        second item is the value returned from the axios request.
+        thrid item is a string with the error message if there was an error
+        fouth item is a boolean indicating if the axios request is running
+     */
     const [request, value, error, isloading] = useAxios();
     useEffect(() => {
         // default axios request.
         request.get('api/url');
+        request.post('api/url', object);
+        request.put('api/url', object);
+        request.del('api/url/someId', object);
         //axious with auth api request.
-        request.get('api/auth', true);
+        request.get('api/url', true);
+        request.post('api/url', object, true);
+        request.put('api/url', object, true);
+        request.del('api/url/someId', object, true);
     }, []);
     return (
         <>
@@ -65,18 +79,17 @@ function Component() {
 ```
 
 #### Setup useAxios in component. This does not set the default config for other useAxios calls.
-```javascript
+```jsx harmony
 // or use config setup in component.
 const [request, value, error, isLoading] = useAxios({baseURL:
 "https://some-url/", timeout: 1000});
-const useAuthAxios = true;
 
 return (
     <>
     {isLoading && <div>loading</div>}
-    <button onClick={() => request.post('someUrl', object, useAuthAxios)}>click me</button>
+    <button onClick={() => request.post('someUrl', object)}>click me</button>
     <button onClick={() => request.put('someUrl', object)}>click me</button>
-    <button onClick={() => request.del('someUrl/SomeId', object, useAuthAxios)}>click
+    <button onClick={() => request.del('someUrl/SomeId', object)}>click
     me</button>
     {error && <p>{error}</p>}
     </>
