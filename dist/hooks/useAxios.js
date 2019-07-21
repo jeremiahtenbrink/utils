@@ -6,9 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var axiosConfig_1 = __importDefault(require("./axiosConfig"));
 /**
- * useAxios custom hook. Takes in one optional parameter.
+ * ## Custom Hook
+ * Takes in one optional parameter. If no parameter is used then the default configuration for axios requests will be used.
  *
- * @param config  Default axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ * @param config  Axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ * @return - Returns array of values. Index 0 is the request object used to make the 4 different axios requests. Index 1 is the value of the request. Index two is the error message if there was an error and a blank string if there wasn't one. Index 3 is a boolean indicating if the request is currently being made.
  */
 exports.useAxios = function (config) {
     if (config === void 0) { config = null; }
@@ -98,7 +100,7 @@ exports.useAxios = function (config) {
     ];
 };
 /**
- * ## setAxiosDefaultConfig
+ * ## Function
  * Call this function early in your application to set the default configuration on all future axios calls.
  *
  * @param config Default axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
@@ -108,7 +110,7 @@ exports.setAxiosDefaultConfig = function (config) {
     axiosConfig_1.default.setDefaultConfig(config);
 };
 /**
- * ## setAxiosAuthConfig
+ * ## Function
  * Call this function early in your application to set the auth configuration
  * on all future axios calls.
  *

@@ -43,6 +43,14 @@ var EncryptionConfig = /** @class */ (function () {
     };
     return EncryptionConfig;
 }());
+/**
+ * ## Function
+ * Sets the cryptr configuration using the secret key provided.
+ * Set this up early in our application to use useEncryption and
+ * useDecryption through out your application.
+ *
+ * @param key Secret key for AES encryption.
+ */
 exports.setEncryptionConfig = function (key) {
     EncryptionConfig.setCryptr(key);
 };

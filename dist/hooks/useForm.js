@@ -12,6 +12,20 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
+/**
+ * ## Custom Hook
+ * Call useForm to handle all state changes for any form. Returns an array.
+ * Index 0 is the values from the form. Index 1 is a object containing all
+ * the functions to interact with the form inputs.
+ *
+ * @param onSubmit - callback function to be called once the form is submited.
+ * @param formDefaultValues - object containing the default values of the form.
+ *
+ * @return - Form values is a object with key value pairs. Keys being the
+ * input names and values being the value of the users input. The
+ * HandleFunctions object is a object containing the functions change,
+ * submit, and clear.
+ */
 exports.useForm = function (onSubmit, formDefaultValues) {
     if (formDefaultValues === void 0) { formDefaultValues = {}; }
     var _a = react_1.useState(formDefaultValues), defaultValues = _a[0], setDefaultValues = _a[1];
