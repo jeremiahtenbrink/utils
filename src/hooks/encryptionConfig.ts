@@ -45,7 +45,15 @@ class EncryptionConfig {
   
 }
 
-export const setEncryptionConfig = ( key: string ) => {
+/**
+ * ## Function
+ * Sets the cryptr configuration using the secret key provided.
+ * Set this up early in our application to use useEncryption and
+ * useDecryption through out your application.
+ *
+ * @param key Secret key for AES encryption.
+ */
+export const setEncryptionConfig = ( key: string ): void => {
   
   EncryptionConfig.setCryptr( key );
 };

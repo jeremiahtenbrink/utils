@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IRequest | useful-react-hooks</title>
+	<title>UseAxiosRequests | useful-react-hooks</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="irequest.html">IRequest</a>
+					<a href="useaxiosrequests.html">UseAxiosRequests</a>
 				</li>
 			</ul>
-			<h1>Interface IRequest</h1>
+			<h1>Interface UseAxiosRequests</h1>
 		</div>
 	</div>
 </header>
@@ -65,7 +65,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<h3 id="object-returned-from-useaxios-has-the-functions-get-post-put-and-del-">Object returned from useAxios. Has the functions get, post, put, and del.</h3>
+						<h2 id="object">Object</h2>
+						<p>Returned from useAxios. Has the functions get, post, put, and del.</p>
 					</div>
 				</div>
 			</section>
@@ -73,7 +74,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IRequest</span>
+						<span class="target">UseAxiosRequests</span>
 					</li>
 				</ul>
 			</section>
@@ -84,10 +85,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="irequest.html#del" class="tsd-kind-icon">del</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="irequest.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="irequest.html#post" class="tsd-kind-icon">post</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="irequest.html#put" class="tsd-kind-icon">put</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="useaxiosrequests.html#del" class="tsd-kind-icon">del</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="useaxiosrequests.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="useaxiosrequests.html#post" class="tsd-kind-icon">post</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="useaxiosrequests.html#put" class="tsd-kind-icon">put</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,15 +102,33 @@
 					<div class="tsd-signature tsd-kind-icon">del<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L145">hooks/useAxios.ts:145</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L177">hooks/useAxios.ts:177</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<h2 id="function">Function</h2>
+							<p>Call this function to make a delete http request using axios. The response
+							from the axios call will be placed in index 1 of the returned array from useAxios call.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>string, either the remaining portion of the url or the url of http request.</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>object to pass to the server if one is requried. If not use empty object.</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.</p>
+							</dd>
+						</dl>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, useAuth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, useAuth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -117,6 +136,9 @@
 										<ul class="tsd-parameters">
 											<li>
 												<h5>url: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5>data: <span class="tsd-signature-type">any</span></h5>
 											</li>
 											<li>
 												<h5><span class="tsd-flag ts-flagOptional">Optional</span> useAuth: <span class="tsd-signature-type">boolean</span></h5>
@@ -135,19 +157,21 @@
 					<div class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L142">hooks/useAxios.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L147">hooks/useAxios.ts:147</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<h3 id="function-to-make-a-get-http-request-using-axios-the-response-from-the-axios-call-will-be-placed-in-index-1-of-the-returned-array-from-useaxios-call-">Function to make a get http request using axios. The response from the axios call will be placed in index 1 of the returned array from useAxios call.</h3>
+							<h2 id="function">Function</h2>
+							<p>Used to make a get http request using axios. The response from the axios
+							call will be placed in index 1 of the returned array from useAxios call.</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>param</dt>
 							<dd><p>string, either the remaining portion of the url or the url of http request.</p>
 							</dd>
 							<dt>param</dt>
-							<dd><p>boolean, determins if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.</p>
+							<dd><p>boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.</p>
 							</dd>
 						</dl>
 					</div>
@@ -182,15 +206,33 @@
 					<div class="tsd-signature tsd-kind-icon">post<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L143">hooks/useAxios.ts:143</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L157">hooks/useAxios.ts:157</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<h2 id="function">Function</h2>
+							<p>Used to make a post http request using axios. The response from the axios
+							call will be placed in index 1 of the returned array from useAxios call.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>string, either the remaining portion of the url or the url of http request.</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>object to post to the server.</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.</p>
+							</dd>
+						</dl>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, useAuth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, useAuth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -198,6 +240,9 @@
 										<ul class="tsd-parameters">
 											<li>
 												<h5>url: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5>data: <span class="tsd-signature-type">any</span></h5>
 											</li>
 											<li>
 												<h5><span class="tsd-flag ts-flagOptional">Optional</span> useAuth: <span class="tsd-signature-type">boolean</span></h5>
@@ -216,15 +261,33 @@
 					<div class="tsd-signature tsd-kind-icon">put<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L144">hooks/useAxios.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L167">hooks/useAxios.ts:167</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<h2 id="function">Function</h2>
+							<p>Used to make a put http request using axios. The response from the axios
+							call will be placed in index 1 of the returned array from useAxios call.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>string, either the remaining portion of the url or the url of http request.</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>object to put to the server.</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.</p>
+							</dd>
+						</dl>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, useAuth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, useAuth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -232,6 +295,9 @@
 										<ul class="tsd-parameters">
 											<li>
 												<h5>url: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5>data: <span class="tsd-signature-type">any</span></h5>
 											</li>
 											<li>
 												<h5><span class="tsd-flag ts-flagOptional">Optional</span> useAuth: <span class="tsd-signature-type">boolean</span></h5>
@@ -265,19 +331,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="irequest.html" class="tsd-kind-icon">IRequest</a>
+						<a href="useaxiosrequests.html" class="tsd-kind-icon">Use<wbr>Axios<wbr>Requests</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="irequest.html#del" class="tsd-kind-icon">del</a>
+								<a href="useaxiosrequests.html#del" class="tsd-kind-icon">del</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="irequest.html#get" class="tsd-kind-icon">get</a>
+								<a href="useaxiosrequests.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="irequest.html#post" class="tsd-kind-icon">post</a>
+								<a href="useaxiosrequests.html#post" class="tsd-kind-icon">post</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="irequest.html#put" class="tsd-kind-icon">put</a>
+								<a href="useaxiosrequests.html#put" class="tsd-kind-icon">put</a>
 							</li>
 						</ul>
 					</li>
@@ -327,6 +393,9 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../index.html#useform" class="tsd-kind-icon">use<wbr>Form</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../index.html#uselocalstorage" class="tsd-kind-icon">use<wbr>Local<wbr>Storage</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../index.html#usetoggle" class="tsd-kind-icon">use<wbr>Toggle</a>

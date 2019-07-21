@@ -1,8 +1,8 @@
 <h1 align="center">Welcome to useful-react-hooks 👋</h1>
 <p>
   <img src="https://img.shields.io/badge/version-0.1.8-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/jeremiahtenbrink/useful-hooks/tree/master/docs/index.html">
-    <img alt="Documentation" src="https://img.shields.io/badge/Documentation%3F-no-yellow.svg" target="_blank" />
+  <a href="https://jeremiahtenbrink.github.io/useful-hooks/">
+    <img alt="Documentation" src="https://img.shields.io/badge/Documentation%3F-yes-green.svg" target="_blank" />
   </a>
   <a href="https://github.com/jeremiahtenbrink/useful-hooks/graphs/commit-activity">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" target="_blank" />

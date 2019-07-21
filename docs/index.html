@@ -68,16 +68,19 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/formvalues.html" class="tsd-kind-icon">Form<wbr>Values</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/handlefunctions.html" class="tsd-kind-icon">Handle<wbr>Functions</a></li>
-								<li class="tsd-kind-interface"><a href="interfaces/irequest.html" class="tsd-kind-icon">IRequest</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/useaxiosrequests.html" class="tsd-kind-icon">Use<wbr>Axios<wbr>Requests</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/jwt.html" class="tsd-kind-icon">jwt</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="index.html#iuseauth" class="tsd-kind-icon">IUse<wbr>Auth</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#removevalue" class="tsd-kind-icon">Remove<wbr>Value</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#setvalue" class="tsd-kind-icon">Set<wbr>Value</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#usedecryption" class="tsd-kind-icon">Use<wbr>Decryption</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#useencryption" class="tsd-kind-icon">Use<wbr>Encryption</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#authenticated" class="tsd-kind-icon">authenticated</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -91,6 +94,7 @@
 								<li class="tsd-kind-function"><a href="index.html#usedecryption" class="tsd-kind-icon">use<wbr>Decryption</a></li>
 								<li class="tsd-kind-function"><a href="index.html#useencryption" class="tsd-kind-icon">use<wbr>Encryption</a></li>
 								<li class="tsd-kind-function"><a href="index.html#useform" class="tsd-kind-icon">use<wbr>Form</a></li>
+								<li class="tsd-kind-function"><a href="index.html#uselocalstorage" class="tsd-kind-icon">use<wbr>Local<wbr>Storage</a></li>
 								<li class="tsd-kind-function"><a href="index.html#usetoggle" class="tsd-kind-icon">use<wbr>Toggle</a></li>
 							</ul>
 						</section>
@@ -100,14 +104,38 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="iuseauth" class="tsd-anchor"></a>
+					<h3>IUse<wbr>Auth</h3>
+					<div class="tsd-signature tsd-kind-icon">IUse<wbr>Auth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="index.html#authenticated" class="tsd-signature-type">authenticated</a><span class="tsd-signature-symbol">, </span><a href="interfaces/jwt.html" class="tsd-signature-type">jwt</a><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAuth.ts#L84">hooks/useAuth.ts:84</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<h2 id="array-of-values">Array of values</h2>
+							<p>Returned from useAuth. Array, index position 0 is a boolean indicating
+								rather or not the user is authenticated and index position 1 is the jwt object
+							containing the setToken, getToken or logout functions.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="removevalue" class="tsd-anchor"></a>
 					<h3>Remove<wbr>Value</h3>
 					<div class="tsd-signature tsd-kind-icon">Remove<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useLocalStorage.ts#L46">hooks/useLocalStorage.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useLocalStorage.ts#L72">hooks/useLocalStorage.ts:72</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<h2 id="function">Function</h2>
+							<p>Call this function to remove the item and key from local storage.</p>
+						</div>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -130,15 +158,31 @@
 					<div class="tsd-signature tsd-kind-icon">Set<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useLocalStorage.ts#L45">hooks/useLocalStorage.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useLocalStorage.ts#L67">hooks/useLocalStorage.ts:67</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<h2 id="function">Function</h2>
+							<p>Used to set the localstorage item to a new value.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>Value to be placed into local storage.</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>optional value used to indicate if you want he value
+									and key to be encrypted before storing them in local storage. Default is
+								set to true.</p>
+							</dd>
+						</dl>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, encrypted<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -146,6 +190,9 @@
 										<ul class="tsd-parameters">
 											<li>
 												<h5>value: <span class="tsd-signature-type">any</span></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> encrypted: <span class="tsd-signature-type">boolean</span></h5>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -161,7 +208,7 @@
 					<div class="tsd-signature tsd-kind-icon">Use<wbr>Decryption<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Dispatch</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SetStateAction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useEncryption.ts#L38">hooks/useEncryption.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useEncryption.ts#L38">hooks/useEncryption.ts:38</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -171,9 +218,45 @@
 					<div class="tsd-signature tsd-kind-icon">Use<wbr>Encryption<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Dispatch</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SetStateAction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useEncryption.ts#L37">hooks/useEncryption.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useEncryption.ts#L37">hooks/useEncryption.ts:37</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="authenticated" class="tsd-anchor"></a>
+					<h3>authenticated</h3>
+					<div class="tsd-signature tsd-kind-icon">authenticated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAuth.ts#L48">hooks/useAuth.ts:48</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<h2 id="function">Function</h2>
+							<p>Call this function to see if the user is authenticated or not.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>returns</dt>
+							<dd><p>Return a boolean indicating if the user has been authenticated or not.</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -182,18 +265,18 @@
 					<a name="setaxiosauthconfig" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Axios<wbr>Auth<wbr>Config</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Axios<wbr>Auth<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Axios<wbr>Auth<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosRequestConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useAxios.ts#L128">hooks/useAxios.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L130">hooks/useAxios.ts:130</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<h2 id="setaxiosauthconfig">setAxiosAuthConfig</h2>
+									<h2 id="function">Function</h2>
 									<p>Call this function early in your application to set the auth configuration
 									on all future axios calls.</p>
 								</div>
@@ -201,7 +284,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>config: <span class="tsd-signature-type">AxiosConfig</span></h5>
+									<h5>config: <span class="tsd-signature-type">AxiosRequestConfig</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Axios auth request configuration. See <a href="https://www.npmjs.com/package/axios">Axios</a></p>
@@ -217,25 +300,25 @@
 					<a name="setaxiosdefaultconfig" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Axios<wbr>Default<wbr>Config</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Axios<wbr>Default<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Axios<wbr>Default<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosRequestConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useAxios.ts#L116">hooks/useAxios.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L118">hooks/useAxios.ts:118</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<h2 id="setaxiosdefaultconfig">setAxiosDefaultConfig</h2>
+									<h2 id="function">Function</h2>
 									<p>Call this function early in your application to set the default configuration on all future axios calls.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>config: <span class="tsd-signature-type">AxiosConfig</span></h5>
+									<h5>config: <span class="tsd-signature-type">AxiosRequestConfig</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Default axios request configuration. See <a href="https://www.npmjs.com/package/axios">Axios</a></p>
@@ -258,13 +341,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/encryptionConfig.ts#L48">hooks/encryptionConfig.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/encryptionConfig.ts#L56">hooks/encryptionConfig.ts:56</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<h2 id="function">Function</h2>
+									<p>Sets the cryptr configuration using the secret key provided.
+										Set this up early in our application to use useEncryption and
+									useDecryption through out your application.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Secret key for AES encryption.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -275,25 +371,42 @@
 					<a name="useauth" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> use<wbr>Auth</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">use<wbr>Auth<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, token<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IUseAuth</span></li>
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Auth<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, token<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="index.html#iuseauth" class="tsd-signature-type">IUseAuth</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useAuth.ts#L3">hooks/useAuth.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAuth.ts#L12">hooks/useAuth.ts:12</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<h2 id="custom-hook">Custom Hook</h2>
+									<p>Sets the token to local storage. Gives easy access to get
+									and set token.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>LocalStorage key to be used to store the token.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> token: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Token to be stored.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IUseAuth</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="index.html#iuseauth" class="tsd-signature-type">IUseAuth</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -301,18 +414,19 @@
 					<a name="useaxios" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> use<wbr>Axios</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">use<wbr>Axios<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosRequestConfig</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="interfaces/irequest.html" class="tsd-signature-type">IRequest</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></li>
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Axios<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosRequestConfig</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="interfaces/useaxiosrequests.html" class="tsd-signature-type">UseAxiosRequests</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useAxios.ts#L12">hooks/useAxios.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAxios.ts#L14">hooks/useAxios.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>useAxios custom hook. Takes in one optional parameter.</p>
+									<h2 id="custom-hook">Custom Hook</h2>
+									<p>Takes in one optional parameter. If no parameter is used then the default configuration for axios requests will be used.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -321,12 +435,15 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> config: <span class="tsd-signature-type">AxiosRequestConfig</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Default axios request configuration. See <a href="https://www.npmjs.com/package/axios">Axios</a></p>
+											<p>Axios request configuration. See <a href="https://www.npmjs.com/package/axios">Axios</a></p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="interfaces/irequest.html" class="tsd-signature-type">IRequest</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="interfaces/useaxiosrequests.html" class="tsd-signature-type">UseAxiosRequests</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></h4>
+							<ul>
+								<li>Returns array of values. Index 0 is the request object used to make the 4 different axios requests. Index 1 is the value of the request. Index two is the error message if there was an error and a blank string if there wasn&#39;t one. Index 3 is a boolean indicating if the request is currently being made.</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -340,7 +457,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useEncryption.ts#L22">hooks/useEncryption.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useEncryption.ts#L22">hooks/useEncryption.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -363,7 +480,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useEncryption.ts#L4">hooks/useEncryption.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useEncryption.ts#L4">hooks/useEncryption.ts:4</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -386,13 +503,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useForm.ts#L5">hooks/useForm.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useForm.ts#L19">hooks/useForm.ts:19</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<h2 id="custom-hook">Custom Hook</h2>
+									<p>Call useForm to handle all state changes for any form. Returns an array.
+										Index 0 is the values from the form. Index 1 is a object containing all
+									the functions to interact with the form inputs.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>onSubmit: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>callback function to be called once the form is submited.</p>
+										</div>
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
@@ -414,9 +544,68 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> formDefaultValues: <span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>object containing the default values of the form.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="interfaces/formvalues.html" class="tsd-signature-type">FormValues</a><span class="tsd-signature-symbol">, </span><a href="interfaces/handlefunctions.html" class="tsd-signature-type">HandleFunctions</a><span class="tsd-signature-symbol">]</span></h4>
+							<ul>
+								<li>Form values is a object with key value pairs. Keys being the
+									input names and values being the value of the users input. The
+									HandleFunctions object is a object containing the functions change,
+								submit, and clear.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="uselocalstorage" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> use<wbr>Local<wbr>Storage</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Local<wbr>Storage<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, initialValue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><a href="index.html#setvalue" class="tsd-signature-type">SetValue</a><span class="tsd-signature-symbol">, </span><a href="index.html#removevalue" class="tsd-signature-type">RemoveValue</a><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useLocalStorage.ts#L15">hooks/useLocalStorage.ts:15</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<h2 id="custom-hook">Custom Hook</h2>
+									<p>This hook makes setting values to local storage easy.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Local storage key to be used for this item to be stored in
+											local storage.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialValue: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Initial value if there isn&#39;t a value in localstorage.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><a href="index.html#setvalue" class="tsd-signature-type">SetValue</a><span class="tsd-signature-symbol">, </span><a href="index.html#removevalue" class="tsd-signature-type">RemoveValue</a><span class="tsd-signature-symbol">]</span></h4>
+							<ul>
+								<li>Returns a array. Index 0 is the value of the localStorage.
+									Index 1 is a function used to change the value of the item in local storage.
+								Index 2 is a function used to remove the item from local storage.</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -430,7 +619,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/8f8e871/src/hooks/useToggle.ts#L3">hooks/useToggle.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useToggle.ts#L3">hooks/useToggle.ts:3</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -462,7 +651,13 @@
 						<a href="interfaces/handlefunctions.html" class="tsd-kind-icon">Handle<wbr>Functions</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/irequest.html" class="tsd-kind-icon">IRequest</a>
+						<a href="interfaces/useaxiosrequests.html" class="tsd-kind-icon">Use<wbr>Axios<wbr>Requests</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/jwt.html" class="tsd-kind-icon">jwt</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#iuseauth" class="tsd-kind-icon">IUse<wbr>Auth</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#removevalue" class="tsd-kind-icon">Remove<wbr>Value</a>
@@ -475,6 +670,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#useencryption" class="tsd-kind-icon">Use<wbr>Encryption</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#authenticated" class="tsd-kind-icon">authenticated</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="index.html#setaxiosauthconfig" class="tsd-kind-icon">set<wbr>Axios<wbr>Auth<wbr>Config</a>
@@ -501,6 +699,9 @@
 						<a href="index.html#useform" class="tsd-kind-icon">use<wbr>Form</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="index.html#uselocalstorage" class="tsd-kind-icon">use<wbr>Local<wbr>Storage</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="index.html#usetoggle" class="tsd-kind-icon">use<wbr>Toggle</a>
 					</li>
 				</ul>
@@ -509,66 +710,10 @@
 	</div>
 </div>
 <footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
-		</div>
-	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/"
+	target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>

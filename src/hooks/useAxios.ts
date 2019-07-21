@@ -1,15 +1,17 @@
 import { Dispatch, SetStateAction, useEffect, useState, } from "react";
 import AxiosConfig from "./axiosConfig";
-import axios, { AxiosInstance } from 'axios';
+import { AxiosInstance } from 'axios';
 import { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 
 /**
- * useAxios custom hook. Takes in one optional parameter.
+ * ## Custom Hook
+ * Takes in one optional parameter. If no parameter is used then the default configuration for axios requests will be used.
  *
- * @param config  Default axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ * @param config  Axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ * @return - Returns array of values. Index 0 is the request object used to make the 4 different axios requests. Index 1 is the value of the request. Index two is the error message if there was an error and a blank string if there wasn't one. Index 3 is a boolean indicating if the request is currently being made.
  */
 
-export const useAxios = ( config: AxiosRequestConfig | null = null ): [ IRequest, any, string, boolean ] => {
+export const useAxios = ( config: AxiosRequestConfig | null = null ): [ UseAxiosRequests, any, string, boolean ] => {
   
   const [ value, setValue ]: [ any, ( value: any ) => void ] = useState( null );
   const [ error, setError ]: [ string, ( error: string ) => void ] = useState(
@@ -107,32 +109,70 @@ export const useAxios = ( config: AxiosRequestConfig | null = null ): [ IRequest
 };
 
 /**
- * ## setAxiosDefaultConfig
+ * ## Function
  * Call this function early in your application to set the default configuration on all future axios calls.
  *
  * @param config Default axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
  * @return void
  */
-export const setAxiosDefaultConfig = ( config: AxiosConfig ): void => {
+export const setAxiosDefaultConfig = ( config: AxiosRequestConfig ): void => {
   
   AxiosConfig.setDefaultConfig( config );
 };
 
 /**
- * ## setAxiosAuthConfig
+ * ## Function
  * Call this function early in your application to set the auth configuration
  * on all future axios calls.
  *
  * @param config Axios auth request configuration. See [Axios](https://www.npmjs.com/package/axios)
  */
-export const setAxiosAuthConfig = ( config: AxiosConfig ): void => {
+export const setAxiosAuthConfig = ( config: AxiosRequestConfig ): void => {
   AxiosConfig.setAuthConfig( config );
 };
 
-export interface IRequest {
-  
+/**
+ * ## Object
+ * Returned from useAxios. Has the functions get, post, put, and del.
+ */
+export interface UseAxiosRequests {
+  /**
+   * ## Function
+   * Used to make a get http request using axios. The response from the axios
+   * call will be placed in index 1 of the returned array from useAxios call.
+   *
+   * @param url - string, either the remaining portion of the url or the url of http request.
+   * @param useAuth - boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.
+   */
   get: ( url: string, useAuth?: boolean ) => void;
-  post: ( url: string, useAuth?: boolean ) => void;
-  put: ( url: string, useAuth?: boolean ) => void;
-  del: ( url: string, useAuth?: boolean ) => void;
+  /**
+   * ## Function
+   * Used to make a post http request using axios. The response from the axios
+   * call will be placed in index 1 of the returned array from useAxios call.
+   *
+   * @param url - string, either the remaining portion of the url or the url of http request.
+   * @param data - object to post to the server.
+   * @param useAuth - boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.
+   */
+  post: ( url: string, data: any, useAuth?: boolean ) => void;
+  /**
+   * ## Function
+   * Used to make a put http request using axios. The response from the axios
+   * call will be placed in index 1 of the returned array from useAxios call.
+   *
+   * @param url - string, either the remaining portion of the url or the url of http request.
+   * @param data - object to put to the server.
+   * @param useAuth - boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.
+   */
+  put: ( url: string, data: any, useAuth?: boolean ) => void;
+  /**
+   * ## Function
+   * Call this function to make a delete http request using axios. The response
+   * from the axios call will be placed in index 1 of the returned array from useAxios call.
+   *
+   * @param url - string, either the remaining portion of the url or the url of http request.
+   * @param data - object to pass to the server if one is requried. If not use empty object.
+   * @param useAuth - boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.
+   */
+  del: ( url: string, data: any, useAuth?: boolean ) => void;
 }

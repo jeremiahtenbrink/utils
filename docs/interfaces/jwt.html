@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>HandleFunctions | useful-react-hooks</title>
+	<title>jwt | useful-react-hooks</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="handlefunctions.html">HandleFunctions</a>
+					<a href="jwt.html">jwt</a>
 				</li>
 			</ul>
-			<h1>Interface HandleFunctions</h1>
+			<h1>Interface jwt</h1>
 		</div>
 	</div>
 </header>
@@ -66,7 +66,8 @@
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<h2 id="object">Object</h2>
-						<p>Contains three functions used to handle form events.</p>
+						<p>Returned from useAuth hook. Has three functions, setToken, getToken and
+						logout.</p>
 					</div>
 				</div>
 			</section>
@@ -74,7 +75,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">HandleFunctions</span>
+						<span class="target">jwt</span>
 					</li>
 				</ul>
 			</section>
@@ -85,9 +86,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="handlefunctions.html#change" class="tsd-kind-icon">change</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="handlefunctions.html#clear" class="tsd-kind-icon">clear</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="handlefunctions.html#submit" class="tsd-kind-icon">submit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jwt.html#gettoken" class="tsd-kind-icon">get<wbr>Token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jwt.html#logout" class="tsd-kind-icon">log<wbr>Out</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jwt.html#settoken" class="tsd-kind-icon">set<wbr>Token</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,23 +97,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="change" class="tsd-anchor"></a>
-					<h3>change</h3>
-					<div class="tsd-signature tsd-kind-icon">change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="gettoken" class="tsd-anchor"></a>
+					<h3>get<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useForm.ts#L67">hooks/useForm.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAuth.ts#L68">hooks/useAuth.ts:68</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<h2 id="function">Function</h2>
-							<p>Place this function in the onChange function of all your form inputs.
-							This will update the form state to the newest values.</p>
+							<p>This function gets the Jason Web Token from local storage.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>param</dt>
-							<dd><p>event from the form onChange function.</p>
+							<dt>returns</dt>
+							<dd><p>Jason Web Token in local storage.</p>
 							</dd>
 						</dl>
 					</div>
@@ -121,17 +121,11 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>e: <span class="tsd-signature-type">any</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 									</li>
 								</ul>
 							</li>
@@ -139,19 +133,18 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="clear" class="tsd-anchor"></a>
-					<h3>clear</h3>
-					<div class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="logout" class="tsd-anchor"></a>
+					<h3>log<wbr>Out</h3>
+					<div class="tsd-signature tsd-kind-icon">log<wbr>Out<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useForm.ts#L83">hooks/useForm.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAuth.ts#L73">hooks/useAuth.ts:73</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<h2 id="function">Function</h2>
-							<p>Call this function to set all the form inputs back to their original
-							values.</p>
+							<p>This function removes the Jason Web Token from localstorage.</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -171,25 +164,22 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="submit" class="tsd-anchor"></a>
-					<h3>submit</h3>
-					<div class="tsd-signature tsd-kind-icon">submit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="settoken" class="tsd-anchor"></a>
+					<h3>set<wbr>Token</h3>
+					<div class="tsd-signature tsd-kind-icon">set<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useForm.ts#L77">hooks/useForm.ts:77</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/9ee4c59/src/hooks/useAuth.ts#L62">hooks/useAuth.ts:62</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<h2 id="function">Function</h2>
-							<p>Place this function in the forms onSubmit function or in the submit
-								button onClick method. Used to handle the forms onSubmit method.
-								Prevents default form actions if needed and returns the values to the
-							onSubmit function provided in the useForm hook arguments.</p>
+							<p>This function stores the Jason Web Token to localstorage.</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>param</dt>
-							<dd><p>onSubmit Form event or onClick method from the button.</p>
+							<dd><p>Jason Web Token received from backend.</p>
 							</dd>
 						</dl>
 					</div>
@@ -198,14 +188,14 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Event</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">FormEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
-												<h5>e: <span class="tsd-signature-type">Event</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">FormEvent</span></h5>
+												<h5>token: <span class="tsd-signature-type">string</span></h5>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -230,30 +220,30 @@
 					<li class=" tsd-kind-interface">
 						<a href="formvalues.html" class="tsd-kind-icon">Form<wbr>Values</a>
 					</li>
+					<li class=" tsd-kind-interface">
+						<a href="handlefunctions.html" class="tsd-kind-icon">Handle<wbr>Functions</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="useaxiosrequests.html" class="tsd-kind-icon">Use<wbr>Axios<wbr>Requests</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="handlefunctions.html" class="tsd-kind-icon">Handle<wbr>Functions</a>
+						<a href="jwt.html" class="tsd-kind-icon">jwt</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="handlefunctions.html#change" class="tsd-kind-icon">change</a>
+								<a href="jwt.html#gettoken" class="tsd-kind-icon">get<wbr>Token</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="handlefunctions.html#clear" class="tsd-kind-icon">clear</a>
+								<a href="jwt.html#logout" class="tsd-kind-icon">log<wbr>Out</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="handlefunctions.html#submit" class="tsd-kind-icon">submit</a>
+								<a href="jwt.html#settoken" class="tsd-kind-icon">set<wbr>Token</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="useaxiosrequests.html" class="tsd-kind-icon">Use<wbr>Axios<wbr>Requests</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="jwt.html" class="tsd-kind-icon">jwt</a>
-					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../index.html#iuseauth" class="tsd-kind-icon">IUse<wbr>Auth</a>
 					</li>
