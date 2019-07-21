@@ -10,7 +10,7 @@ import decode from 'jwt-decode';
  */
 
 export const useAuth = ( key: string,
-                         token: string | null = null ): IUseAuth => {
+                         token: string | null = null ): UseAuth => {
   
   const setToken = ( someToken: string ): void => {
     localStorage.setItem( key, someToken );
@@ -52,7 +52,7 @@ export type authenticated = () => boolean;
  * Returned from useAuth hook. Has three functions, setToken, getToken and
  * logout.
  */
-export interface jwt {
+export interface Jwt {
   /**
    * ## Function
    * This function stores the Jason Web Token to localstorage.
@@ -78,7 +78,7 @@ type DecodedToken = { exp: number; };
 /**
  * ## Array of values
  * Returned from useAuth. Array, index position 0 is a boolean indicating
- * rather or not the user is authenticated and index position 1 is the jwt object
+ * rather or not the user is authenticated and index position 1 is the Jwt object
  * containing the setToken, getToken or logout functions.
  */
-export type IUseAuth = [ authenticated, jwt ]
+export type UseAuth = [ authenticated, Jwt ]
