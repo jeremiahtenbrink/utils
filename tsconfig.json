@@ -88,7 +88,7 @@
     "includes": "./src/",
     "excludeExternals": true,
     "excludeNotExported": true,
-    "theme": "C:\\Users\\jeremiah\\AppData\\Roaming\\npm\\node_modules\\typedoc\\theme",
+    "theme": "./theme",
     "readme": "none"
   }
 }
