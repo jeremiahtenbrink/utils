@@ -82,13 +82,15 @@
     "src/"
   ],
   "typedocOptions": {
-    "mode": "file",
+    "name": "useful-react-hooks",
+    "mode": "modules",
     "out": "docs",
     "includeDeclarations": true,
+    "excludeNotExported": false,
     "includes": "./src/",
     "excludeExternals": true,
-    "excludeNotExported": true,
-    "theme": "./theme",
-    "readme": "none"
+    "readme": "none",
+    "exclude": "./src/**/*Config*",
+    "theme": "./theme"
   }
 }

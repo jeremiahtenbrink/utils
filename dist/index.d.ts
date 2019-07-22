@@ -1,6 +1,9 @@
-export * from './hooks/useForm';
-export * from './hooks/useAxios';
-export * from './hooks/useAuth';
-export * from './hooks/useEncryption';
-export * from './hooks/encryptionConfig';
-export * from './hooks/useLocalStorage';
+/**
+ * ## Custom Hook
+ */
+export * from './useForm';
+export * from './useAxios';
+export * from './useAuth';
+export * from './useEncryption';
+export * from './encryptionConfig';
+export * from './useLocalStorage';
