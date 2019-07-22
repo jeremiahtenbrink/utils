@@ -69,7 +69,7 @@ export type LocalStorageValue = any;
  * @param value - value: to be placed into local storage.
  * @param encrypted - encrypted: optional value used to indicate if you want the value
  * and key to be encrypted before storing them in local storage. Default is
- * set to false. You must call [setEncryptionConfig](/modules/_useencryption_.html#setencryptionconfig) in
+ * set to false. You must call [setEncryptionConfig](#setencryptionconfig) in
  * order to use encryption.
  */
 export type SetValue = ( value: any, encrypted?: boolean ) => void;
