@@ -11,7 +11,7 @@ import { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
  * @return - Returns array of values. Index 0 is the request object used to make the 4 different axios requests. Index 1 is the value of the request. Index two is the error message if there was an error and a blank string if there wasn't one. Index 3 is a boolean indicating if the request is currently being made.
  */
 
-export const useAxios = ( config: Config | null = null ): [ UseAxiosRequests, RequestData, Error, IsLoading ] => {
+export const useAxios = ( config: Config | null = null ): [ useAxiosRequests, requestData, axiosError, isLoading ] => {
   
   const [ value, setValue ]: [ any, ( value: any ) => void ] = useState( null );
   const [ error, setError ]: [ string, ( error: string ) => void ] = useState(
@@ -111,20 +111,20 @@ export const useAxios = ( config: Config | null = null ): [ UseAxiosRequests, Re
  * ## Any
  * This is the data returned from the axios request.
  */
-export type RequestData = any;
+export type requestData = any;
 
 /**
  * ## Boolean
  * Indicates when the axios request has started and finished.
  */
-export type IsLoading = boolean;
+export type isLoading = boolean;
 
 /**
  * ## String
  * String value of the error message if a error occurred. If no error this
  * will be a empty string.
  */
-export type Error = string;
+export type axiosError = string;
 /**
  * ## Function
  * Call this function early in your application to set the default configuration on all future axios calls.
@@ -151,7 +151,7 @@ export const setAxiosAuthConfig = ( config: Config ): void => {
  * ## Object
  * Returned from useAxios. Has the functions get, post, put, and del.
  */
-export interface UseAxiosRequests {
+export interface useAxiosRequests {
   /**
    * ## Function
    * Used to make a get http request using axios. The response from the axios

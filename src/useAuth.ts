@@ -53,7 +53,8 @@ export const useAuth = ( key: string,
  * ## Function
  * Call this function to see if the user is authenticated or not.
  *
- * @return Return a boolean indicating if the user has been authenticated or not.
+ * @returns Returns a boolean indicating if the user has been authenticated
+ * or not.
  */
 export type Authenticated = () => boolean;
 
@@ -87,6 +88,9 @@ export interface JwtFunctions {
   logOut: () => void;
 }
 
+/**
+ * @ignore
+ */
 type DecodedToken = { exp: number; };
 
 /**
