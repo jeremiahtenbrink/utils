@@ -83,7 +83,7 @@
   ],
   "typedocOptions": {
     "name": "useful-react-hooks",
-    "mode": "file",
+    "mode": "modules",
     "out": "docs",
     "includeDeclarations": true,
     "excludeNotExported": false,
