@@ -122,13 +122,15 @@ function App() {
     const [request, value, error, isloading] = useAxios();
     // useForm accepts two arguments
     const [state, handle] = useForm(
-    // First argument is your initial state
-    {
-      username: "John",
-      password: "Dough"
-    },
-    // Second argument is your submit handler
+    // First argument is your handle submit function.
     handleAddUser
+    // Second argument is your default state. Optional
+        {
+          username: "John",
+          password: "Dough"
+        },
+    //third param is your form validate function.
+    formValidate
     );
 
     const useAuth = true;
@@ -138,6 +140,24 @@ function App() {
         
       // Clears form inputs
       handle.clear();
+    }
+
+    // in your form validate function you will recieve the name of the input 
+    and the value of the user has input. 
+    function formValidate (name, value) {
+        if(name ==== "username"){
+            if (value.length < 4){
+                // return the error string
+                return "Username must be longer than 4 characters.";
+            }
+            
+        }else if (name === "password"){
+            if (password.length < 8){
+                return "Password must be longer than 8 characters.";
+            }
+        }
+        
+        return ""; // leave blank for no error. 
     }
 
     // Do something when the response from the axios request returns. 
@@ -152,16 +172,20 @@ function App() {
         <form onSubmit={handle.submit}> 
           <input
             name="username"
-            value={state.username}
+            value={state.username && state.username.value}
             onChange={handle.change}
           />
+          {state.username && state.username.error && <p>{state.username
+          .error}</p> }
     
           <input
             type="password"
             name="password"
-            value={state.password}
+            value={state.password && state["password"].value}
             onChange={handle.change}
           />
+          {state.password && state.password.error && <p>{state.password
+          .error}</p> }
           <button onClick={handle.submit}>Submit</button>
         </form>
       </div>
@@ -236,6 +260,50 @@ function App (props) {
     )
 }
 ```
+
+# useLocalStorage 
+
+```jsx
+import React, {useEffect} from 'react';
+import {useLocalStorage, setAxiosAuthConfig} from 'useful-react-hooks';
+
+function App ({userId}) {
+
+    // useLocalStorage takes two arguments. The key for local storage and the 
+    inital value to use for local storage 
+    const [userData, setValue, removeValue] = useLocalStorage('userData');
+    const [request, value, error, isloading] = useAxios();
+    
+    // run use effect to create a axios request to get the userData from backend
+    useEffect(() => {
+        // only run request for userData if there isn't a stored value in localstorage.
+        if(!storedValue){
+            request.get(`/userData/${userId}`);
+        }
+    }, [])
+    
+    // run use effect when the value changes from the request call. 
+    useEffect(() => {
+        if (value){
+            //call setValue for local storage
+            setValue(value);
+            
+            // or you could encrypt the key and value. 
+            // setEncryptionConfig must have been called before this is run. See
+            // useEncryption and useDecryption hook setup for instructions. 
+            setValue(value, true);
+        }
+    }, [value]);
+    
+    
+    return (
+        {/* to remove the token do */}
+        <button onClick={() => removeValue()}>Remove User Data</button>
+    );
+}
+
+```
+
 
 ## Author
 
