@@ -13,7 +13,8 @@ export declare const useAuth: (key: string, initalValue?: string) => [Authentica
  * ## Function
  * Call this function to see if the user is authenticated or not.
  *
- * @return Return a boolean indicating if the user has been authenticated or not.
+ * @returns Returns a boolean indicating if the user has been authenticated
+ * or not.
  */
 export declare type Authenticated = () => boolean;
 /**

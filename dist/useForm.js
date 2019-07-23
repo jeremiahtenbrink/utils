@@ -18,32 +18,43 @@ var react_1 = require("react");
  * Index 0 is the values from the form. Index 1 is a object containing all
  * the functions to interact with the form inputs.
  *
- * @param onSubmit - callback function to be called once the form is submited.
- * @param formDefaultValues - object containing the default values of the form.
+ * @param onSubmit - `onSubmit` - Callback function to be called once the
+ * form is submitted.
+ * @param formDefaultValues - `formDefaultValues` - Object containing the
+ * default values of the form.
+ * @param formValidate - `formValidate` - Callback function for validating
+ * the forms values.
  *
  * @return - Form values is a object with key value pairs. Keys being the
  * input names and values being the value of the users input. The
  * HandleFunctions object is a object containing the functions change,
  * submit, and clear.
  */
-exports.useForm = function (onSubmit, formDefaultValues) {
-    if (formDefaultValues === void 0) { formDefaultValues = {}; }
-    var _a = react_1.useState(formDefaultValues), defaultValues = _a[0], setDefaultValues = _a[1];
-    var _b = react_1.useState(formDefaultValues), values = _b[0], setValues = _b[1];
+exports.useForm = function (onSubmit, formDefaultValues, formValidate) {
+    var defaultValues = react_1.useState(formDefaultValues)[0];
+    var _a = react_1.useState(function () {
+        var valuesToBe = {};
+        if (Object.keys(formDefaultValues).length > 0) {
+            Object.keys(formDefaultValues).map(function (key) {
+                valuesToBe[key] = { value: formDefaultValues[key], error: null };
+            });
+            return valuesToBe;
+        }
+        return {};
+    }), values = _a[0], setValues = _a[1];
     var change = function (e) {
-        var _a, _b;
+        var _a;
         if (e.target.type === "checkbox") {
-            var _c = e.target, name_1 = _c.name, checked = _c.checked;
-            if (!defaultValues[name_1]) {
-                setDefaultValues(__assign({}, defaultValues, (_a = {}, _a[name_1] = false, _a)));
-            }
-            setValues(__assign({}, values, (_b = {}, _b[name_1] = checked, _b)));
+            var _b = e.target, name_1 = _b.name, checked = _b.checked;
+            var error_1 = validate(name_1, checked);
+            setValues(__assign({}, values, (_a = {}, _a[name_1] = { value: checked, error: error_1 }, _a)));
             return;
         }
-        var _d = e.target, name = _d.name, value = _d.value;
+        var _c = e.target, name = _c.name, value = _c.value;
+        var error = validate(name, value);
         setValues(function (prevValues) {
             var _a;
-            return (__assign({}, prevValues, (_a = {}, _a[name] = value, _a)));
+            return (__assign({}, prevValues, (_a = {}, _a[name] = { value: value, error: error }, _a)));
         });
     };
     var submit = function (e) {
@@ -55,6 +66,18 @@ exports.useForm = function (onSubmit, formDefaultValues) {
     };
     var clear = function () {
         setValues(defaultValues);
+    };
+    var validate = function (name, value) {
+        if (formValidate) {
+            var error = formValidate(name, value);
+            if (error) {
+                if (typeof error !== "string") {
+                    throw Error("FormValidate must return a string.");
+                }
+                return error;
+            }
+        }
+        return '';
     };
     return [values, { change: change, submit: submit, clear: clear }];
 };

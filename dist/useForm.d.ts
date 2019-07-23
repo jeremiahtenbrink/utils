@@ -5,15 +5,56 @@ import { FormEvent } from 'react';
  * Index 0 is the values from the form. Index 1 is a object containing all
  * the functions to interact with the form inputs.
  *
- * @param onSubmit - callback function to be called once the form is submited.
- * @param formDefaultValues - object containing the default values of the form.
+ * @param onSubmit - `onSubmit` - Callback function to be called once the
+ * form is submitted.
+ * @param formDefaultValues - `formDefaultValues` - Object containing the
+ * default values of the form.
+ * @param formValidate - `formValidate` - Callback function for validating
+ * the forms values.
  *
  * @return - Form values is a object with key value pairs. Keys being the
  * input names and values being the value of the users input. The
  * HandleFunctions object is a object containing the functions change,
  * submit, and clear.
  */
-export declare const useForm: (onSubmit: (IValues: any) => void, formDefaultValues?: {}) => [FormValues, HandleFunctions];
+export declare const useForm: (onSubmit: OnSubmit, formDefaultValues?: FromDefaultValues, formValidate?: FormValidate) => [FormValues, HandleFunctions];
+/**
+ * ## Callback Function
+ * If this function is not undefined then it will be called on every onChange
+ * function call. This callback function will be called with the
+ * name of the input and the value of the input. The user can decide to return either a empty
+ * string ( No Error ) or a string with the error message.
+ *
+ * @param name `name` - The name of the input field.
+ * @param value `value` - The value of the input field.
+ *
+ * @returns Must return either a blank string indicating no error or a error
+ * message as a string value.
+ */
+export declare type FormValidate = (name: string, value: any) => string;
+/**
+ * ## Function
+ * OnSubmit function is the callback function passed into the useForm
+ * function call. It is the function that gets passed all the form values
+ * once the form has been submitted.
+ *
+ * @param formValues `formValues` - Object with key value pairs. Keys being
+ * the input names and values being a object. The object contains two
+ * attributes. value - the value of the input field, and error, the error
+ * message returned from
+ * [formValidate](/modules/_useform_.html#formvalidate) if any was returned.
+ */
+export declare type OnSubmit = (formValues: FormValues) => void;
+/**
+ * ## Object
+ * This is the default values of the form if any. It is a object with key
+ * value pairs. Keys being the name of the input fields and values being the
+ * input default values.
+ *
+ */
+export declare type FromDefaultValues = {
+    [name: string]: any;
+};
 /**
  * ## Object
  * Contains three functions used to handle form events.
@@ -29,12 +70,12 @@ export interface HandleFunctions {
     change: (e: any) => void;
     /**
      * ## Function
-     * Place this function in the forms onSubmit function or in the submit
-     * button onClick method. Used to handle the forms onSubmit method.
+     * Place this function in the forms OnSubmit function or in the submit
+     * button onClick method. Used to handle the forms OnSubmit method.
      * Prevents default form actions if needed and returns the values to the
-     * onSubmit function provided in the useForm hook arguments.
+     * OnSubmit function provided in the useForm hook arguments.
      *
-     * @param e - onSubmit Form event or onClick method from the button.
+     * @param e - OnSubmit Form event or onClick method from the button.
      */
     submit: (e: Event | FormEvent) => void;
     /**
@@ -47,8 +88,13 @@ export interface HandleFunctions {
 /**
  * ## Object
  * Object containing key value pairs. Keys being the form input names and
- * values being the users inputted values.
+ * values being a object with the properties of value and error. Value being
+ * the value of the form input and error being the returned string from
+ * [FormValidate](#formvalidate).
  */
 export interface FormValues {
-    [name: string]: any;
+    [name: string]: {
+        value: any;
+        error: string;
+    };
 }

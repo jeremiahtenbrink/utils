@@ -6,23 +6,23 @@ import { AxiosRequestConfig } from "axios";
  * @param config  Axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
  * @return - Returns array of values. Index 0 is the request object used to make the 4 different axios requests. Index 1 is the value of the request. Index two is the error message if there was an error and a blank string if there wasn't one. Index 3 is a boolean indicating if the request is currently being made.
  */
-export declare const useAxios: (config?: Config) => [UseAxiosRequests, any, string, boolean];
+export declare const useAxios: (config?: Config) => [useAxiosRequests, any, string, boolean];
 /**
  * ## Any
  * This is the data returned from the axios request.
  */
-export declare type RequestData = any;
+export declare type requestData = any;
 /**
  * ## Boolean
  * Indicates when the axios request has started and finished.
  */
-export declare type IsLoading = boolean;
+export declare type isLoading = boolean;
 /**
  * ## String
  * String value of the error message if a error occurred. If no error this
  * will be a empty string.
  */
-export declare type Error = string;
+export declare type axiosError = string;
 /**
  * ## Function
  * Call this function early in your application to set the default configuration on all future axios calls.
@@ -43,7 +43,7 @@ export declare const setAxiosAuthConfig: (config: Config) => void;
  * ## Object
  * Returned from useAxios. Has the functions get, post, put, and del.
  */
-export interface UseAxiosRequests {
+export interface useAxiosRequests {
     /**
      * ## Function
      * Used to make a get http request using axios. The response from the axios
@@ -57,6 +57,10 @@ export interface UseAxiosRequests {
      * ## Function
      * Used to make a post http request using axios. The response from the axios
      * call will be placed in index 1 of the returned array from useAxios call.
+     *
+     * @param url - Either the url or apart of the url of a http request.
+     * @param data object to post to the server.
+     * @param useAuth boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.
      */
     post: (url: string, data: any, useAuth?: boolean) => void;
     /**
@@ -64,9 +68,11 @@ export interface UseAxiosRequests {
      * Used to make a put http request using axios. The response from the axios
      * call will be placed in index 1 of the returned array from useAxios call.
      *
-     * @param url - string, either the remaining portion of the url or the url of http request.
-     * @param data - object to put to the server.
-     * @param useAuth - boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.
+     * @param url `url:` - Either the remaining portion of the url or the url
+     * of http request.
+     * @param data `data:` - object to put to the server.
+     * @param useAuth `useAuth:` - determines if you want to use the auth
+     * axios call or not. setAxiosAuthConfig must have already been called in your app.
      */
     put: (url: string, data: any, useAuth?: boolean) => void;
     /**
