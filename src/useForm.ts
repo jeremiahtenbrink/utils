@@ -8,8 +8,12 @@ import {
  * Index 0 is the values from the form. Index 1 is a object containing all
  * the functions to interact with the form inputs.
  *
- * @param onSubmit - callback function to be called once the form is submited.
- * @param formDefaultValues - object containing the default values of the form.
+ * @param onSubmit - `onSubmit` - Callback function to be called once the form is
+ * submitted.
+ * @param formDefaultValues - `formDefaultValues` - Object containing the
+ * default values of the form.
+ * @param formValidate - `formValidate` - Callback function for validating
+ * the forms values.
  *
  * @return - Form values is a object with key value pairs. Keys being the
  * input names and values being the value of the users input. The
@@ -17,24 +21,35 @@ import {
  * submit, and clear.
  */
 export const useForm = ( onSubmit: ( IValues ) => void,
-                         formDefaultValues: {} = {} ): [ FormValues, HandleFunctions ] => {
+                         formDefaultValues: {} = {},
+                         formValidate: FormValidate | null = null ): [ FormValues, HandleFunctions ] => {
   
-  let [ defaultValues, setDefaultValues ] = useState( formDefaultValues );
+  let [ defaultValues ] = useState( formDefaultValues );
   const [ values, setValues ]: [ FormValues, Dispatch<SetStateAction<FormValues>> ] = useState(
-    formDefaultValues );
+    () => {
+      const valuesToBe = {};
+      if ( Object.keys( formDefaultValues ).length > 0 ) {
+        Object.keys( formDefaultValues ).map( key => {
+          valuesToBe[ key ] = { value: formDefaultValues[ key ], error: null }
+        } );
+        return valuesToBe;
+      }
+      return {}
+    } );
   
   const change = ( e: any ): void => {
+    
     if ( e.target.type === "checkbox" ) {
       let { name, checked } = e.target as HTMLInputElement;
-      if ( !defaultValues[ name ] ) {
-        setDefaultValues( { ...defaultValues, [ name ]: false } );
-      }
-      setValues( { ...values, [ name ]: checked } );
+      const error = validate( name, checked );
+      setValues( { ...values, [ name ]: { value: checked, error } } );
       return;
     }
     
     const { name, value } = e.target;
-    setValues( prevValues => ( { ...prevValues, [ name ]: value } ) );
+    const error = validate( name, value );
+    setValues(
+      prevValues => ( { ...prevValues, [ name ]: { value, error } } ) );
   };
   
   const submit = ( e: Event | FormEvent ): void => {
@@ -49,8 +64,30 @@ export const useForm = ( onSubmit: ( IValues ) => void,
     setValues( defaultValues );
   };
   
+  const validate = ( name: string, value: any ): string => {
+    if ( formValidate ) {
+      const error = formValidate( name, value );
+      if ( error ) {
+        if ( typeof error !== "string" ) {
+          throw Error( "formValidate must return a string." );
+        }
+        return error;
+      }
+    }
+    return '';
+  };
+  
   return [ values, { change, submit, clear } ];
 };
+
+/**
+ * ## Callback Function
+ * This function is called on ever onChange function call. If this function
+ * is not null. The users function will be called with the name of the input
+ * and the value of the input. The user can decide to return either a empty
+ * string ( No Error ) or a string with the error message.
+ */
+export type FormValidate = ( name: string, value: any ) => string
 
 /**
  * ## Object
@@ -86,9 +123,10 @@ export interface HandleFunctions {
 /**
  * ## Object
  * Object containing key value pairs. Keys being the form input names and
- * values being the users inputted values.
+ * values being a object with the properties of value and error. Value being
+ * the value of the form input and error being the returned string from
+ * [FormValidate](#formvalidate).
  */
 export interface FormValues {
-  [ name: string ]: any
+  [ name: string ]: { value: any, error: string }
 }
-

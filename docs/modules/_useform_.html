@@ -76,6 +76,12 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_useform_.html#formvalidate" class="tsd-kind-icon">Form<wbr>Validate</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_useform_.html#useform" class="tsd-kind-icon">use<wbr>Form</a></li>
@@ -85,18 +91,64 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="formvalidate" class="tsd-anchor"></a>
+					<h3>Form<wbr>Validate</h3>
+					<div class="tsd-signature tsd-kind-icon">Form<wbr>Validate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/68579c4/src/useForm.ts#L90">useForm.ts:90</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<h2 id="callback-function">Callback Function</h2>
+							<p>This function is called on ever onChange function call. If this function
+								is not null. The users function will be called with the name of the input
+								and the value of the input. The user can decide to return either a empty
+							string ( No Error ) or a string with the error message.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>name: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5>value: <span class="tsd-signature-type">any</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="useform" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> use<wbr>Form</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">use<wbr>Form<span class="tsd-signature-symbol">(</span>onSubmit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, formDefaultValues<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="../interfaces/_useform_.formvalues.html" class="tsd-signature-type">FormValues</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/_useform_.handlefunctions.html" class="tsd-signature-type">HandleFunctions</a><span class="tsd-signature-symbol">]</span></li>
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Form<span class="tsd-signature-symbol">(</span>onSubmit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, formDefaultValues<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">__type</span>, formValidate<span class="tsd-signature-symbol">?: </span><a href="_useform_.html#formvalidate" class="tsd-signature-type">FormValidate</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="../interfaces/_useform_.formvalues.html" class="tsd-signature-type">FormValues</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/_useform_.handlefunctions.html" class="tsd-signature-type">HandleFunctions</a><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/502be0b/src/useForm.ts#L19">useForm.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/68579c4/src/useForm.ts#L23">useForm.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -113,7 +165,8 @@
 									<h5>onSubmit: <span class="tsd-signature-type">function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>callback function to be called once the form is submited.</p>
+											<p><code>onSubmit</code> - Callback function to be called once the form is
+											submitted.</p>
 										</div>
 									</div>
 									<ul class="tsd-parameters">
@@ -139,7 +192,17 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> formDefaultValues: <span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>object containing the default values of the form.</p>
+											<p><code>formDefaultValues</code> - Object containing the
+											default values of the form.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> formValidate: <a href="_useform_.html#formvalidate" class="tsd-signature-type">FormValidate</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><code>formValidate</code> - Callback function for validating
+											the forms values.</p>
 										</div>
 									</div>
 								</li>
@@ -180,9 +243,6 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_uselocalstorage_.html">"use<wbr>Local<wbr>Storage"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_usetoggle_.html">"use<wbr>Toggle"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
@@ -192,6 +252,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/_useform_.handlefunctions.html" class="tsd-kind-icon">Handle<wbr>Functions</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_useform_.html#formvalidate" class="tsd-kind-icon">Form<wbr>Validate</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_useform_.html#useform" class="tsd-kind-icon">use<wbr>Form</a>
