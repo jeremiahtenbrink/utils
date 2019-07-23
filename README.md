@@ -19,6 +19,7 @@
 > A set of custom useful hooks to be used in React Applications.
 
 ### 🏠 [Homepage](https://github.com/jeremiahtenbrink/useful-hooks)
+### 🏠 [Documentation](https://jeremiahtenbrink.github.io/useful-hooks/)
 
 ## Install
 

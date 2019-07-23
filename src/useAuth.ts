@@ -9,7 +9,8 @@ import { useLocalStorage } from "./useLocalStorage";
  * @param key   LocalStorage key to be used to store the token.
  * @param initalValue  token inital value. Default is null;
  * them to local storage. Default is true. Must run
- * [setEncryptionConfig](/modules/_useencryption_.html#setencryptionconfig) first.
+ *
+ *  [setEncryptionConfig](/useful-hooks/modules/_useencryption_.html#setencryptionconfig) first.
  */
 
 export const useAuth = ( key: string,
