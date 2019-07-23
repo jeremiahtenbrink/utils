@@ -123,7 +123,7 @@ function App() {
     // useForm accepts two arguments
     const [state, handle] = useForm(
     // First argument is your handle submit function.
-    handleAddUser
+    handleAddUser,
     // Second argument is your default state. Optional
         {
           username: "John",
@@ -265,7 +265,7 @@ function App (props) {
 
 ```jsx
 import React, {useEffect} from 'react';
-import {useLocalStorage, setAxiosAuthConfig} from 'useful-react-hooks';
+import {useLocalStorage} from 'useful-react-hooks';
 
 function App ({userId}) {
 
