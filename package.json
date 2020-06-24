@@ -13,7 +13,7 @@
     "url": "https://github.com/jeremiahtenbrink/useful-hooks/issues"
   },
   "homepage": "https://github.com/jeremiahtenbrink/useful-hooks",
-  "dependencies": {
+  "peerDependencies": {
     "axios": "^0.19.2",
     "cryptr": "^6.0.2",
     "jwt-decode": "^2.2.0",
@@ -31,7 +31,8 @@
   "scripts": {
     "run": "npm-run-all docs build",
     "build": "tsc",
-    "docs": "typedoc"
+    "docs": "typedoc",
+    "publish": "npm publish --access public"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
