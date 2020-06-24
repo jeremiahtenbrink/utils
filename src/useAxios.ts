@@ -1,17 +1,18 @@
-import { Dispatch, SetStateAction, useEffect, useState, } from "react";
+import { Dispatch, SetStateAction, useState, } from "react";
 import AxiosConfig from "./axiosConfig";
 import { AxiosInstance } from 'axios';
 import { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 
 /**
  * ## Custom Hook
- * Takes in one optional parameter. If no parameter is used then the default configuration for axios requests will be used.
+ * Takes in one optional parameter. If no parameter is passed in then the
+ * default configuration for axios will be used.
  *
- * @param config  Axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
- * @return - Returns array of values. Index 0 is the request object used to make the 4 different axios requests. Index 1 is the value of the request. Index two is the error message if there was an error and a blank string if there wasn't one. Index 3 is a boolean indicating if the request is currently being made.
+ * @param config `config` - Axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ * @return {UseAxiosReturn}
  */
 
-export const useAxios = ( config: Config | null = null ): [ useAxiosRequests, requestData, axiosError, isLoading ] => {
+export const useAxios = ( config: Config | null = null ): UseAxiosReturn => {
   
   const [ value, setValue ]: [ any, ( value: any ) => void ] = useState( null );
   const [ error, setError ]: [ string, ( error: string ) => void ] = useState(
@@ -102,29 +103,24 @@ export const useAxios = ( config: Config | null = null ): [ useAxiosRequests, re
     }
   };
   
-  return [
-    { get, post, put, del }, value, error,
+  
+  return {
+    requests: { get, post, put, del },
+    value,
+    error,
     isLoading
-  ];
+  };
 };
-/**
- * ## Any
- * This is the data returned from the axios request.
- */
-export type requestData = any;
 
-/**
- * ## Boolean
- * Indicates when the axios request has started and finished.
- */
-export type isLoading = boolean;
 
-/**
- * ## String
- * String value of the error message if a error occurred. If no error this
- * will be a empty string.
- */
-export type axiosError = string;
+export type UseAxiosReturn = {
+  requests: useAxiosRequests,
+  value: AxiosResponse,
+  error: string,
+  isLoading: boolean
+}
+
+
 /**
  * ## Function
  * Call this function early in your application to set the default configuration on all future axios calls.
@@ -166,7 +162,7 @@ export interface useAxiosRequests {
    * Used to make a post http request using axios. The response from the axios
    * call will be placed in index 1 of the returned array from useAxios call.
    *
-   * @param url - Either the url or apart of the url of a http request.
+   * @param url - Either the url or a part of the url of a http request.
    * @param data object to post to the server.
    * @param useAuth boolean, determines if you want to use the auth axios call or not. setAxiosAuthConfig must have already been called in your app.
    */

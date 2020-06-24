@@ -3,18 +3,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.useLocalStorage = void 0;
 var react_1 = require("react");
 var encryptionConfig_1 = __importDefault(require("./encryptionConfig"));
 /**
- * ## Custom Hook
+ * ## Use Local Storage
+ *
  * This hook makes setting values to local storage easy.
+ *
  * @param key - Local storage key to be used for this item to be stored in
  * local storage.
  * @param initialValue - Initial value if there isn't a value in localstorage.
  *
  * @return - Returns a array. Index 0 is the value of the localStorage.
- * Index 1 is a function used to change the value of the item in local storage.
- * Index 2 is a function used to remove the item from local storage.
+ *
  */
 exports.useLocalStorage = function (key, initialValue) {
     var _a = react_1.useState(key), storageKey = _a[0], setStorageKey = _a[1];

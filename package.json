@@ -1,6 +1,6 @@
 {
   "name": "useful-react-hooks",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "private": false,
   "author": "Jeremiah Tenbrink <jeremiahtenbrink@gmail.com>",
   "description": "A set of custom useful hooks to be used in React Applications.",
@@ -14,23 +14,24 @@
   },
   "homepage": "https://github.com/jeremiahtenbrink/useful-hooks",
   "dependencies": {
-    "axios": "^0.x",
-    "cryptr": "^4.x",
-    "jwt-decode": "^2.x",
-    "react": "^16.8.x",
-    "react-dom": "^16.8.x",
-    "react-scripts": "3.x"
+    "axios": "^0.19.2",
+    "cryptr": "^6.0.2",
+    "jwt-decode": "^2.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@types/jwt-decode": "^2.2.1",
-    "@types/node": "^12.6.2",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-    "typescript": "^3.5.3"
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.38",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^3.9.5"
   },
   "scripts": {
-    "build": "tsc"
+    "run": "npm-run-all docs build",
+    "build": "tsc",
+    "docs": "typedoc"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

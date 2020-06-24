@@ -3,14 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.setEncryptionConfig = exports.useDecryption = exports.useEncryption = void 0;
 var encryptionConfig_1 = __importDefault(require("./encryptionConfig"));
 var react_1 = require("react");
 /**
- * ## Custom Hook
+ * Use Encryption Hook
  * Use to encrypt data. Must run [setEncryptionConfig](#setencryptionconfig)
  * first.
  *
  * @param toEncrypt - LocalStorageValue to be encrypted
+ * @return {UseEncryptionReturn}
  */
 exports.useEncryption = function (toEncrypt) {
     var _a = react_1.useState(toEncrypt), value = _a[0], setValue = _a[1];
@@ -24,14 +26,14 @@ exports.useEncryption = function (toEncrypt) {
     return [encrypted, setValue];
 };
 /**
- * ## Custom Hook
+ * Use Decryption Hook
  * Use this hook to decrypt data that has already been encrypted. Must run
  * [setEncryptionConfig](#setencryptionconfig) first.
- * @param toDecrypt - encrypted string to be decrypted.
+ * @param {string} toDecrypt - encrypted string to be decrypted.
  */
 exports.useDecryption = function (toDecrypt) {
     var _a = react_1.useState(toDecrypt), value = _a[0], setValue = _a[1];
-    var _b = react_1.useState(), decrypted = _b[0], setDecrypted = _b[1];
+    var _b = react_1.useState(""), decrypted = _b[0], setDecrypted = _b[1];
     react_1.useEffect(function () {
         if (value) {
             var decryption = encryptionConfig_1.default.decrypt(value);
@@ -41,10 +43,10 @@ exports.useDecryption = function (toDecrypt) {
     return [decrypted, setValue];
 };
 /**
- * ## Function
+ * @typedef {(key: string) => void} setEncryptionConfig
  * Sets the cryptr configuration using the secret key provided.
  * Set this up early in our application to use useEncryption and
- * useDecryption through out your application. Used for
+ * useDecryption throughout your application. Used for
  * [useEncryption](#useencryption) and for [useDecryption](#usedecryption).
  *
  * @param key Secret key for AES encryption.

@@ -7,7 +7,7 @@ import { useLocalStorage } from "./useLocalStorage";
  * and set token.
  *
  * @param key   LocalStorage key to be used to store the token.
- * @param initalValue  token inital value. Default is null;
+ * @param initialValue  token initial value. Default is null;
  * them to local storage. Default is true. Must run
  *
  *  [setEncryptionConfig](/useful-hooks/modules/_useencryption_.html#setencryptionconfig) first.

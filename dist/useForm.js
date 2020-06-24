@@ -11,6 +11,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.useForm = void 0;
 var react_1 = require("react");
 /**
  * ## Custom Hook
@@ -47,14 +48,14 @@ exports.useForm = function (onSubmit, formDefaultValues, formValidate) {
         if (e.target.type === "checkbox") {
             var _b = e.target, name_1 = _b.name, checked = _b.checked;
             var error_1 = validate(name_1, checked);
-            setValues(__assign({}, values, (_a = {}, _a[name_1] = { value: checked, error: error_1 }, _a)));
+            setValues(__assign(__assign({}, values), (_a = {}, _a[name_1] = { value: checked, error: error_1 }, _a)));
             return;
         }
         var _c = e.target, name = _c.name, value = _c.value;
         var error = validate(name, value);
         setValues(function (prevValues) {
             var _a;
-            return (__assign({}, prevValues, (_a = {}, _a[name] = { value: value, error: error }, _a)));
+            return (__assign(__assign({}, prevValues), (_a = {}, _a[name] = { value: value, error: error }, _a)));
         });
     };
     var submit = function (e) {

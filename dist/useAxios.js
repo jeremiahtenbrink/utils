@@ -3,14 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.setAxiosAuthConfig = exports.setAxiosDefaultConfig = exports.useAxios = void 0;
 var react_1 = require("react");
 var axiosConfig_1 = __importDefault(require("./axiosConfig"));
 /**
  * ## Custom Hook
- * Takes in one optional parameter. If no parameter is used then the default configuration for axios requests will be used.
+ * Takes in one optional parameter. If no parameter is passed in then the
+ * default configuration for axios will be used.
  *
- * @param config  Axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
- * @return - Returns array of values. Index 0 is the request object used to make the 4 different axios requests. Index 1 is the value of the request. Index two is the error message if there was an error and a blank string if there wasn't one. Index 3 is a boolean indicating if the request is currently being made.
+ * @param config `config` - Axios request configuration. See [Axios](https://www.npmjs.com/package/axios)
+ * @return {UseAxiosReturn}
  */
 exports.useAxios = function (config) {
     if (config === void 0) { config = null; }
@@ -94,10 +96,12 @@ exports.useAxios = function (config) {
             }).finally(function () { return setIsLoading(false); });
         }
     };
-    return [
-        { get: get, post: post, put: put, del: del }, value, error,
-        isLoading
-    ];
+    return {
+        requests: { get: get, post: post, put: put, del: del },
+        value: value,
+        error: error,
+        isLoading: isLoading
+    };
 };
 /**
  * ## Function

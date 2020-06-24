@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.useAuth = void 0;
 var jwt_decode_1 = __importDefault(require("jwt-decode"));
 var useLocalStorage_1 = require("./useLocalStorage");
 /**
@@ -11,9 +12,10 @@ var useLocalStorage_1 = require("./useLocalStorage");
  * and set token.
  *
  * @param key   LocalStorage key to be used to store the token.
- * @param initalValue  token inital value. Default is null;
+ * @param initialValue  token initial value. Default is null;
  * them to local storage. Default is true. Must run
- * [setEncryptionConfig](/modules/_useencryption_.html#setencryptionconfig) first.
+ *
+ *  [setEncryptionConfig](/useful-hooks/modules/_useencryption_.html#setencryptionconfig) first.
  */
 exports.useAuth = function (key, initalValue) {
     if (initalValue === void 0) { initalValue = null; }

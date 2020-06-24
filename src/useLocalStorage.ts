@@ -2,15 +2,16 @@ import { Dispatch, SetStateAction, useState } from "react";
 import EncryptionConfig from './encryptionConfig';
 
 /**
- * ## Custom Hook
+ * ## Use Local Storage
+ *
  * This hook makes setting values to local storage easy.
+ *
  * @param key - Local storage key to be used for this item to be stored in
  * local storage.
  * @param initialValue - Initial value if there isn't a value in localstorage.
  *
  * @return - Returns a array. Index 0 is the value of the localStorage.
- * Index 1 is a function used to change the value of the item in local storage.
- * Index 2 is a function used to remove the item from local storage.
+ *
  */
 export const useLocalStorage = ( key: string,
                                  initialValue?: any ): [ LocalStorageValue, SetValue, RemoveValue ] => {
@@ -20,7 +21,6 @@ export const useLocalStorage = ( key: string,
     () => EncryptionConfig.encrypt( key ) );
   const [ storedValue, setStoredValue ]: [ any, Dispatch<SetStateAction<any>> ] = useState(
     () => {
-      
       for ( let i = 0; i < localStorage.length; i++ ) {
         let keyFromStorage: string | null = localStorage.key( i );
         

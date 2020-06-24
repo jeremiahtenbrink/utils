@@ -57,7 +57,7 @@
 					<a href="_useaxios_.html">&quot;useAxios&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;useAxios&quot;</h1>
+			<h1>Module &quot;useAxios&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,24 +71,22 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_useaxios_.config.html" class="tsd-kind-icon">Config</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_useaxios_.useaxiosrequests.html" class="tsd-kind-icon">use<wbr>Axios<wbr>Requests</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_useaxios_.config.html" class="tsd-kind-icon">Config</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_useaxios_.useaxiosrequests.html" class="tsd-kind-icon">use<wbr>Axios<wbr>Requests</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_useaxios_.html#axioserror" class="tsd-kind-icon">axios<wbr>Error</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_useaxios_.html#isloading" class="tsd-kind-icon">is<wbr>Loading</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_useaxios_.html#requestdata" class="tsd-kind-icon">request<wbr>Data</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_useaxios_.html#useaxiosreturn" class="tsd-kind-icon">Use<wbr>Axios<wbr>Return</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_useaxios_.html#setaxiosauthconfig" class="tsd-kind-icon">set<wbr>Axios<wbr>Auth<wbr>Config</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_useaxios_.html#setaxiosdefaultconfig" class="tsd-kind-icon">set<wbr>Axios<wbr>Default<wbr>Config</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_useaxios_.html#useaxios" class="tsd-kind-icon">use<wbr>Axios</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_useaxios_.html#setaxiosauthconfig" class="tsd-kind-icon">set<wbr>Axios<wbr>Auth<wbr>Config</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_useaxios_.html#setaxiosdefaultconfig" class="tsd-kind-icon">set<wbr>Axios<wbr>Default<wbr>Config</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_useaxios_.html#useaxios" class="tsd-kind-icon">use<wbr>Axios</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,74 +94,54 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
-					<a name="axioserror" class="tsd-anchor"></a>
-					<h3>axios<wbr>Error</h3>
-					<div class="tsd-signature tsd-kind-icon">axios<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="useaxiosreturn" class="tsd-anchor"></a>
+					<h3>Use<wbr>Axios<wbr>Return</h3>
+					<div class="tsd-signature tsd-kind-icon">Use<wbr>Axios<wbr>Return<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/eefa67d/src/useAxios.ts#L127">useAxios.ts:127</a></li>
+							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/4bb0ac1/src/useAxios.ts#L116">src/useAxios.ts:116</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<h2 id="string">String</h2>
-							<p>String value of the error message if a error occurred. If no error this
-							will be a empty string.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
-					<a name="isloading" class="tsd-anchor"></a>
-					<h3>is<wbr>Loading</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Loading<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/eefa67d/src/useAxios.ts#L120">useAxios.ts:120</a></li>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>is<wbr>Loading<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>requests<span class="tsd-signature-symbol">: </span><a href="../interfaces/_useaxios_.useaxiosrequests.html" class="tsd-signature-type">useAxiosRequests</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosResponse</span></h5>
+							</li>
 						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<h2 id="boolean">Boolean</h2>
-							<p>Indicates when the axios request has started and finished.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
-					<a name="requestdata" class="tsd-anchor"></a>
-					<h3>request<wbr>Data</h3>
-					<div class="tsd-signature tsd-kind-icon">request<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/eefa67d/src/useAxios.ts#L114">useAxios.ts:114</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<h2 id="any">Any</h2>
-							<p>This is the data returned from the axios request.</p>
-						</div>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="setaxiosauthconfig" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Axios<wbr>Auth<wbr>Config</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
 						<li class="tsd-signature tsd-kind-icon">set<wbr>Axios<wbr>Auth<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/_useaxios_.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/eefa67d/src/useAxios.ts#L146">useAxios.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/4bb0ac1/src/useAxios.ts#L142">src/useAxios.ts:142</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<h2 id="function">Function</h2>
+									<a href="#function" id="function" style="color: inherit; text-decoration: none;">
+										<h2>Function</h2>
+									</a>
 									<p>Call this function early in your application to set the auth configuration
 									on all future axios calls.</p>
 								</div>
@@ -183,22 +161,24 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="setaxiosdefaultconfig" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Axios<wbr>Default<wbr>Config</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
 						<li class="tsd-signature tsd-kind-icon">set<wbr>Axios<wbr>Default<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/_useaxios_.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/eefa67d/src/useAxios.ts#L135">useAxios.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/4bb0ac1/src/useAxios.ts#L131">src/useAxios.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<h2 id="function">Function</h2>
+									<a href="#function" id="function" style="color: inherit; text-decoration: none;">
+										<h2>Function</h2>
+									</a>
 									<p>Call this function early in your application to set the default configuration on all future axios calls.</p>
 								</div>
 							</div>
@@ -218,40 +198,40 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="useaxios" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> use<wbr>Axios</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">use<wbr>Axios<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_useaxios_.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="../interfaces/_useaxios_.useaxiosrequests.html" class="tsd-signature-type">useAxiosRequests</a><span class="tsd-signature-symbol">, </span><a href="_useaxios_.html#requestdata" class="tsd-signature-type">requestData</a><span class="tsd-signature-symbol">, </span><a href="_useaxios_.html#axioserror" class="tsd-signature-type">axiosError</a><span class="tsd-signature-symbol">, </span><a href="_useaxios_.html#isloading" class="tsd-signature-type">isLoading</a><span class="tsd-signature-symbol">]</span></li>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Axios<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_useaxios_.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_useaxios_.html#useaxiosreturn" class="tsd-signature-type">UseAxiosReturn</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/eefa67d/src/useAxios.ts#L14">useAxios.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/jeremiahtenbrink/useful-hooks/blob/4bb0ac1/src/useAxios.ts#L15">src/useAxios.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<h2 id="custom-hook">Custom Hook</h2>
-									<p>Takes in one optional parameter. If no parameter is used then the default configuration for axios requests will be used.</p>
+									<a href="#custom-hook" id="custom-hook" style="color: inherit; text-decoration: none;">
+										<h2>Custom Hook</h2>
+									</a>
+									<p>Takes in one optional parameter. If no parameter is passed in then the
+									default configuration for axios will be used.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> config: <a href="../interfaces/_useaxios_.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> config: <a href="../interfaces/_useaxios_.config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Axios request configuration. See <a href="https://www.npmjs.com/package/axios">Axios</a></p>
+											<p><code>config</code> - Axios request configuration. See <a href="https://www.npmjs.com/package/axios">Axios</a></p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="../interfaces/_useaxios_.useaxiosrequests.html" class="tsd-signature-type">useAxiosRequests</a><span class="tsd-signature-symbol">, </span><a href="_useaxios_.html#requestdata" class="tsd-signature-type">requestData</a><span class="tsd-signature-symbol">, </span><a href="_useaxios_.html#axioserror" class="tsd-signature-type">axiosError</a><span class="tsd-signature-symbol">, </span><a href="_useaxios_.html#isloading" class="tsd-signature-type">isLoading</a><span class="tsd-signature-symbol">]</span></h4>
-							<ul>
-								<li>Returns array of values. Index 0 is the request object used to make the 4 different axios requests. Index 1 is the value of the request. Index two is the error message if there was an error and a blank string if there wasn&#39;t one. Index 3 is a boolean indicating if the request is currently being made.</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_useaxios_.html#useaxiosreturn" class="tsd-signature-type">UseAxiosReturn</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -263,50 +243,65 @@
 					<li class="globals  ">
 						<a href="../index.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
+					<li class=" tsd-kind-module">
+						<a href="_axiosconfig_.html">&quot;axios<wbr>Config&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_useauth_.html">"use<wbr>Auth"</a>
+					<li class=" tsd-kind-module">
+						<a href="_encryptionconfig_.html">&quot;encryption<wbr>Config&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="_useaxios_.html">"use<wbr>Axios"</a>
+					<li class=" tsd-kind-module">
+						<a href="_useauth_.html">&quot;use<wbr>Auth&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_useencryption_.html">"use<wbr>Encryption"</a>
+					<li class="current tsd-kind-module">
+						<a href="_useaxios_.html">&quot;use<wbr>Axios&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_useform_.html">"use<wbr>Form"</a>
+					<li class=" tsd-kind-module">
+						<a href="_useencryption_.html">&quot;use<wbr>Encryption&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_uselocalstorage_.html">"use<wbr>Local<wbr>Storage"</a>
+					<li class=" tsd-kind-module">
+						<a href="_useform_.html">&quot;use<wbr>Form&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_uselocalstorage_.html">&quot;use<wbr>Local<wbr>Storage&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_utils_doublylinkedlist_.html">&quot;utils/<wbr>Doubly<wbr>Linked<wbr>List&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_utils_linkedlistnode_.html">&quot;utils/<wbr>Linked<wbr>List<wbr>Node&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_utils_queue_.html">&quot;utils/<wbr>Queue&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_utils_stack_.html">&quot;utils/<wbr>Stack&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_utils_nodeutils_.html">&quot;utils/node<wbr>Utils&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_utils_styledutils_.html">&quot;utils/styled<wbr>Utils&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_useaxios_.config.html" class="tsd-kind-icon">Config</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_useaxios_.useaxiosrequests.html" class="tsd-kind-icon">use<wbr>Axios<wbr>Requests</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="_useaxios_.html#axioserror" class="tsd-kind-icon">axios<wbr>Error</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_useaxios_.html#useaxiosreturn" class="tsd-kind-icon">Use<wbr>Axios<wbr>Return</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="_useaxios_.html#isloading" class="tsd-kind-icon">is<wbr>Loading</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="_useaxios_.html#requestdata" class="tsd-kind-icon">request<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_useaxios_.html#setaxiosauthconfig" class="tsd-kind-icon">set<wbr>Axios<wbr>Auth<wbr>Config</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_useaxios_.html#setaxiosdefaultconfig" class="tsd-kind-icon">set<wbr>Axios<wbr>Default<wbr>Config</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_useaxios_.html#useaxios" class="tsd-kind-icon">use<wbr>Axios</a>
 					</li>
 				</ul>
