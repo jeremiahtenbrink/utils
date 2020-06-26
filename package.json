@@ -1,18 +1,18 @@
 {
-  "name": "useful-react-hooks",
+  "name": "@jeremiah_tenbrink/utils",
   "version": "0.3.1",
   "private": false,
   "author": "Jeremiah Tenbrink <jeremiahtenbrink@gmail.com>",
-  "description": "A set of custom useful hooks to be used in React Applications.",
+  "description": "A set of custom functions that I use regularly in React and node applications.",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeremiahtenbrink/useful-hooks"
+    "url": "https://github.com/jeremiahtenbrink/utils"
   },
   "bugs": {
-    "url": "https://github.com/jeremiahtenbrink/useful-hooks/issues"
+    "url": "https://github.com/jeremiahtenbrink/utils/issues"
   },
-  "homepage": "https://github.com/jeremiahtenbrink/useful-hooks",
+  "homepage": "https://github.com/jeremiahtenbrink/utils",
   "peerDependencies": {
     "axios": "^0.19.2",
     "cryptr": "^6.0.2",
@@ -31,8 +31,7 @@
   "scripts": {
     "run": "npm-run-all docs build",
     "build": "tsc",
-    "docs": "typedoc",
-    "publish": "npm publish --access public"
+    "docs": "typedoc --readme ./README.md"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -44,5 +43,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "dependencies": {}
 }

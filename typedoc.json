@@ -1,12 +1,11 @@
 {
-  "name": "useful-react-hooks",
+  "name": "jeremiah_tenbrink/utils",
   "mode": "modules",
   "out": "docs",
   "includeDeclarations": true,
   "excludeNotExported": false,
   "includes": "./src/",
   "excludeExternals": true,
-  "readme": "none",
   "exclude": [
     "index.ts"
   ],
