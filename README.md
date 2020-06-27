@@ -9,14 +9,6 @@
   <a href="https://github.com/jeremiahtenbrink/utils/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/jeremiahtenbrink/utils/blob/master/LICENSE" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/github/license/jeremiahtenbrink/@jeremiah_tenbrink/utils" />
-  </a>
-
-  <a href="https://dev.to/@CO_Comp_Nerd" target="_blank">
-    <img alt="Medium: @CO_Comp_Nerd" src="https://img.shields.io
-    /twitter/follow/@CO_Comp_Nerd.svg?style=social" />
-  </a>
 </p>
 
 > A set of custom functions that I use regularly in React and node applications.
