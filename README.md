@@ -29,12 +29,10 @@ npm install
 
 
 
-<img alt="Dev.To: @jeremiahtenbrink" src="./docs/assets/images/devTo.svg">
+<img alt="Dev.To: @jeremiahtenbrink" src="./docs/assets/images/devTo.svg" />
 <text id="@jeremiahtenbrink" fill="white" xml:space="preserve" style="white
 -space: pre" font-family="Roboto" font-size="9" font-weight="bold" letter
 -spacing="0em"><tspan x="26.5194" y="10.4674">@tenbrink</tspan></text>
-
-</img>
 
 
 
