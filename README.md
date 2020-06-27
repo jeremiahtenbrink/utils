@@ -28,7 +28,7 @@ npm install
 * LinkedIn: [@jeremiahtenbrink](https://linkedin.com/in/jeremiahtenbrink)
 
 
-<img alt="Dev.To: @jeremiahtenbrink" src="https://raw.githubusercontent.com/jeremiahtenbrink/utils/master/docs/assets/images/devTo.svg" height="30"/>
+<img alt="Dev.To: @jeremiahtenbrink" src="https://www.figma.com/file/oyNhY9luU9YsQGugNWB9DC/Icons?node-id=461%3A0" height="30"/>
 
 
 
