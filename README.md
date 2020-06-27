@@ -25,14 +25,15 @@ npm install
 
 * Website: http://tenbrink.dev
 * GitHub: [@jeremiahtenbrink](https://github.com/jeremiahtenbrink)
+
+
 * LinkedIn: [@jeremiahtenbrink](https://linkedin.com/in/jeremiahtenbrink)
+<a href="https://github.com/jeremiahtenbrink/utils/graphs/commit-activity" target="_blank">
+    <img alt="Maintenance" src="https://github-badge.vercel.app/api/badges
+    /JeremiahTenbrink" />
+  </a>
 
 
-
-<img alt="Dev.To: @jeremiahtenbrink" src="./docs/assets/images/devTo.svg" />
-<text id="@jeremiahtenbrink" fill="white" xml:space="preserve" style="white
--space: pre" font-family="Roboto" font-size="9" font-weight="bold" letter
--spacing="0em"><tspan x="26.5194" y="10.4674">@tenbrink</tspan></text>
 
 
 
