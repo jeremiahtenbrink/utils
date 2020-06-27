@@ -4,7 +4,6 @@
   "private": false,
   "author": "Jeremiah Tenbrink <jeremiahtenbrink@gmail.com>",
   "description": "A set of custom functions that I use regularly in React and node applications.",
-  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/jeremiahtenbrink/utils"
