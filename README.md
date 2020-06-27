@@ -29,8 +29,7 @@ npm install
 
 * LinkedIn: [@jeremiahtenbrink](https://linkedin.com/in/jeremiahtenbrink)
 <a href="https://github.com/jeremiahtenbrink/utils/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://github-badge.vercel.app/api/badges
-    /JeremiahTenbrink" />
+    <img alt="Linkedin: jeremiahtenbrink" src="https://github-badge.vercel.app/api/badges/JeremiahTenbrink" />
   </a>
 
 
