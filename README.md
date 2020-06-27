@@ -35,7 +35,8 @@ npm install
 * GitHub: [@jeremiahtenbrink](https://github.com/jeremiahtenbrink)
 * LinkedIn: [@jeremiahtenbrink](https://linkedin.com/in/jeremiahtenbrink)
 
-<img alt="Dev.To: @jeremiahtenbrink" href="./public/devTo.svg"/>
+
+<img alt="Dev.To: @jeremiahtenbrink" src="./public/devTo.svg"/>
 <text id="devToText" fill="white" xml:space="preserve" style="white-space
 : pre" font-family="Roboto" font-size="9" font-weight="bold" letter-spacing
 ="0em"><tspan x="26.5194" y="10.4674">@JeremiahTenbrink</tspan></text>
